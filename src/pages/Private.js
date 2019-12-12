@@ -4,7 +4,7 @@ class Private extends Component {
   render() {
     return (
       <div>
-        <h1>Private Route</h1>
+        <h1>maaaaaaappp</h1>
       </div>
     );
   }
