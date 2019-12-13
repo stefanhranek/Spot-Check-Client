@@ -33,10 +33,10 @@
             "PICTURE__1": null
         },
     "geometry": {
-    "type": "Point",
-    "coordinates": [
-    -75.3372987731628,
-    45.38332153627205
+        "type": "Point",
+        "coordinates": [
+            -75.3372987731628,
+            45.38332153627205
     ]
     }
     },

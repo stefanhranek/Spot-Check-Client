@@ -4,7 +4,7 @@ import * as parkDate from "./../data/skateboard-parks.json";
 
 
 
-export default function Map() {
+export default function MapView() {
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
@@ -50,7 +50,7 @@ export default function Map() {
                 setSelectedPark(park);
               }}
             >
-              <img src="./../../public/pin.png" alt="Skate Park Icon" />
+              <img src="./pin.png" alt="Skate Park Icon" />
             </button>
           </Marker>
         ))}
