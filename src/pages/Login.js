@@ -22,7 +22,7 @@ class Login extends Component {
     return (
       <div className="login-page-wrapper">
 
-          <Menu /> 
+          {/* <Menu />  */}
           {/* Remove later */}
 
           <h1 className="login-header">Welcome<br/>Back.</h1>

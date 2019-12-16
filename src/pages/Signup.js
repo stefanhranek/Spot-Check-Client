@@ -22,7 +22,7 @@ class Signup extends Component {
     const { username, password, email } = this.state;
     return (
       <div className="signup-page-wrapper">
-        <Menu />
+        {/* <Menu /> */}
         <h1 className="signup-header">Create<br/>Account.</h1>
         <form className="signup-form-wrapper" onSubmit={this.handleFormSubmit}>
           <section className="signup-form-section-wrapper">
