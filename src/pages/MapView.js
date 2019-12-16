@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as parkDate from "./../data/skateboard-parks.json";
+import HomeTabs from '../components/HomeTabs.js';
+import Menu from '../components/Menu.js';
 
 
 
@@ -9,8 +11,8 @@ export default function MapView() {
     latitude: 45.4211,
     longitude: -75.6903,
     width: "100vw",
-    height: "100vh",
-    zoom: 10
+    height: "88vh",
+    zoom: 7
   });
   const [selectedPark, setSelectedPark] = useState(null);
 
@@ -29,10 +31,12 @@ export default function MapView() {
 
   return (
     <div>
+      <Menu />
+      <HomeTabs />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/mapbox/streets-v11"
+        mapStyle="mapbox://styles/stefanhranek/ck47tdbs43joe1clhber86t17"
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
@@ -50,7 +54,8 @@ export default function MapView() {
                 setSelectedPark(park);
               }}
             >
-              <img src="./pin.png" alt="Skate Park Icon" />
+              <img src="./pin.svg
+              " alt="Skate Park Icon" />
             </button>
           </Marker>
         ))}

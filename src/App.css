@@ -1,5 +1,19 @@
+* {
+  color: #73989A;
+}
+
+html {
+  background: black;
+}
+
 .App {
   text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, 'Roboto', Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .App-logo {
@@ -35,4 +49,213 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* FOR NAV BAR */
+/**************/
+/**************/
+/**************/
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: orange; /* A background-color is required */
+  min-height: 1vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+button.toggle-button {
+  float: left;
+}
+
+h2 {
+  color: red;
+}
+
+/* HOME */
+/* HOME */
+/* HOME */
+/* HOME */
+/* HOME */
+/* HOME */
+
+.homePageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8%;
+}
+
+.homeButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+
+.homeButtons {
+margin: 0 10vw;
+border-radius: 8px;
+height: 40px;
+width: 60px;
+}
+
+.homeImagesContainer {
+  width: 100%;
+}
+
+.homeImage {
+  width: 100%;
+  margin: 5% 0 5% 0;
+}
+/* .fadedHomePicture{
+  height: 40vh;
+  width: auto;
+  background: url('/spotCheckHome.png') 0 0 no-repeat, radial-gradient(ellipse at center, rgba(0,0,0,0) 20%,rgba(0,0,0,1) 100%);
+  background-blend-mode: multiply;
+} */
+
+/* MENU */
+/* MENU */
+/* MENU */
+/* MENU */
+/* MENU */
+/* MENU */
+
+Menu {
+  display: flex;
+  flex-direction: row;
+}
+
+div.Menu {
+  background: orange;
+}
+
+.topNav {
+  border-bottom: 5px double black;
+  margin-bottom: 15px;
+  color: orange;
+}
+
+.hamburgerList {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.705);
+  margin: 10px;
+	background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* button.toggle-button {
+  position: absolute;
+  left: 0;
+  margin: 8vw;
+  height: 2em;
+  width: auto;
+} */
+
+
+/* LOGIN */
+/* LOGIN */
+/* LOGIN */
+/* LOGIN */
+/* LOGIN */
+/* LOGIN */
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  color:red;
+}
+
+
+
+/* BUTTON STYLE  */
+
+.container {
+  margin: auto;
+  width: 170px;
+  height: 50px;
+  transition: all 0.3s ease; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.wrap {
+  height: 50px;
+  width: 100px;
+  border: 2px solid #FFF;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  background: black;
+  margin: 0 20px;
+}
+
+.first {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2px; 
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+/*  HOMETABS COMPONENT  */
+/*  HOMETABS COMPONENT  */
+/*  HOMETABS COMPONENT  */
+/*  HOMETABS COMPONENT  */
+/*  HOMETABS COMPONENT  */
+/*  HOMETABS COMPONENT  */
+
+.HomeTabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background:red;
+}
+
+.tab {
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  
 }

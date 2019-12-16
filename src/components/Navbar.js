@@ -7,8 +7,9 @@ class Navbar extends Component {
     const { user, logout, isLoggedin } = this.props;
     return (
       <div
-        style={{ borderRadius: '5px', padding: '20px', background: '#686de0' }}>
+        style={{ borderRadius: '5px', padding: '20px'}}>
         {isLoggedin ? (
+          
           <div>
             <p>username: {user.username}</p>
             <button onClick={logout}>Logout</button>

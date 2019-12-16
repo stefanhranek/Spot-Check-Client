@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Menu from '../components/Menu'
+import HamburgerMenu from './HamburgerMenu'
 
 export default class Favorites extends Component {
     render() {
         return (
             <div>
-                <Menu />
-                <h1>FAVORITES PAGE!</h1>
+                <HamburgerMenu />
+                THIS IS FAVORITES
             </div>
         )
     }
