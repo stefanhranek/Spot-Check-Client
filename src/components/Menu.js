@@ -26,11 +26,6 @@ class Menu extends Component {
           <nav id="menu">
             <header>
               <HamburgerMenu />
-              {/* <h2>Menu</h2> */}
-              {/* <li>hello</li>
-              <li>hi</li>
-              <li>hi</li>
-              <li>hi</li> */}
             </header>
           </nav>
     
@@ -40,7 +35,7 @@ class Menu extends Component {
 
                 <button className="toggle-button">☰</button>
               </section>
-              <section>
+              <section id="">
                 <h1>Spot Check</h1>
               </section>
             </header>

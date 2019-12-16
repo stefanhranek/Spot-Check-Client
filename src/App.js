@@ -11,7 +11,7 @@ import SpotDetails from './pages/SpotDetails';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
 import Navbar from './components/Navbar';
-import Favorites from './components/Favorites';
+import Favorites from './pages/Favorites';
 import HamburgerMenu from './components/HamburgerMenu';
 
 

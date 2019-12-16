@@ -8,7 +8,7 @@ class AddSpot extends Component {
         name: '', 
         type: '', 
         status: '',
-        indoor: false,
+        indoor: undefined,
         description: '',
         images: [],
         location: []
@@ -25,6 +25,13 @@ class AddSpot extends Component {
       const { name, value } = event.target;
       this.setState({ [name]: value });
     };
+
+    handleCheckboxChange = event => {
+        const { name, value, checked } = event.target;
+        console.log('egswegdsgsgsdgsdgs', { name, value, checked });
+        
+        this.setState({ indoor:value  });
+      };
   
     render() {
       const { name, type, status, indoor, description, images, location } = this.state;
@@ -57,13 +64,19 @@ class AddSpot extends Component {
               onChange={this.handleChange}
             />
 
-            <label>Indoor</label>
-            <input
-              type="text"
-              name="indoor"
-              value={indoor}
-              onChange={this.handleChange}
-            />
+            <label>Indoor?</label>
+                <input
+                type="radio"
+                name="indoor"
+                value="indoor"
+                onChange={this.handleCheckboxChange}
+                />
+                <input
+                type="radio"
+                name="indoor"
+                value="outdoor"
+                onChange={this.handleCheckboxChange}
+                />
 
 
             <label>Description</label>
@@ -75,21 +88,21 @@ class AddSpot extends Component {
             />
 
 
-            <label>Images</label>
+            {/* <label>Images</label>
             <input
               type="text"
               name="images"
               value={images}
               onChange={this.handleChange}
-            />
+            /> */}
 
-            <label>Location</label>
+            {/* <label>Location</label>
             <input
               type="text"
               name="location"
               value={location}
               onChange={this.handleChange}
-            />
+            /> */}
   
             <input type="submit" value="Signup" />
           </form>
