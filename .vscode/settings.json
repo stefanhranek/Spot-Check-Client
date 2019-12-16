@@ -2,4 +2,13 @@
     "cSpell.ignoreWords": [
         "hometabs"
     ]
+,
+    
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#319965",
+          "activityBarBadge.background": "#f58a42",
+          "activityBarBadge.foreground": "#44ffa1"
+        }
+      
 }
+
