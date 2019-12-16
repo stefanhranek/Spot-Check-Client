@@ -4,12 +4,22 @@ import { Link } from "react-router-dom";
 import skatespots from "./../data/skateboard-parks.json"
 // import shortid from "shortid";
 import Menu from '../components/Menu'
+import HomeTabs from '../components/HomeTabs.js';
+import FavoritesList from '../components/FavoritesList.js';
+
+// import services
+import userService from './../lib/user-service';
 
 export default function Favorites(props) {
     return (
         <div className="listContainer">
             <Menu />
-            <h1>FAVORITES LIST</h1>
+            <HomeTabs />
+
+            <section>
+              <FavoritesList />
+            </section>
+            
         </div>
       );
     }

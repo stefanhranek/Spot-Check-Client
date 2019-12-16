@@ -35,7 +35,7 @@ class Menu extends Component {
 
                 <button className="toggle-button">☰</button>
               </section>
-              <section id="">
+              <section id="topNav">
                 <h1>Spot Check</h1>
               </section>
             </header>

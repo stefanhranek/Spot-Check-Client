@@ -13,16 +13,22 @@ class User {
     //   user.profile()
 
 
-
     //   user.favorites()
-
+      getMyFavorites() {
+    
+        return this.user.get('/skatespots/favorites')
+        .then( response =>  {
+            console.log('RESPONSE.dATA', response.data);
+            return response.data;
+            })
+        } 
+      }
 
 
     //   user.edit()
 
 
-    
-  }
+
 
 
 
