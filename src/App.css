@@ -259,3 +259,221 @@ div.Menu {
   text-decoration: none;
   
 }
+
+
+
+/* Login page */
+
+.login-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  ;
+  margin: 8%;
+  font-family: 'Open Sans';
+  text-align: left;
+}
+
+.login-header {
+  /* padding: 15% 0 15% 0; */
+  line-height: 65px;
+  letter-spacing: 6px;
+  color: white;
+  font-size: 3em;
+}
+
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 8% 0 8% 0;
+}
+
+.login-form-section-wrapper input {
+  border: 0;
+  outline: 0;
+  border-bottom: 4px solid grey;
+  color: white;
+  background: black;
+  width: 85%;
+  height: 80px;
+  caret-color: red;
+}
+
+.form-label {
+  font-size: 1em;
+  color: grey;
+  letter-spacing: 1.5px;
+}
+
+label.form-label {
+  letter-spacing: 5px;
+}
+
+.password-input-style {
+  padding-top: 5px;
+  font-size: 1.2em;
+  letter-spacing: 1.15em;
+}
+
+.form-label-password-bottom {
+  color: grey;
+  padding: 5% 0 13% 0;
+  font-size: .9em;
+  letter-spacing: 1.5px;
+}
+
+p.form-label-password-bottom {
+  margin-top: 5px;
+  letter-spacing: 4px;
+}
+
+.login-button {
+  margin-top: 50px;
+  padding: 30px;
+  color: black;
+  font-weight: bolder;
+  font-size: 1em;
+  border-radius: 22px;
+  width: 95%;
+  background-color: #73989A;
+  /* button background color is set in 'button' style near top */
+}
+
+a.sign-up-now-text {
+  color: #ffdc15;
+  font-size: 30px;
+  padding-top: 50px;
+  padding-left: 20px;
+  letter-spacing: 2px;
+}
+
+p.account-message {
+  margin-top: 50px;
+  letter-spacing: 2px;
+  margin-left: 20px;
+}
+
+
+/* Sign up page */
+
+.signup-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  ;
+  margin: 8%;
+  font-family: 'Open Sans';
+  text-align: left;
+}
+
+.back-arrow-icon {
+  padding: 10% 0 15% 0;
+  height: 20px;
+}
+
+.back-arrow-icon img {
+  height: 60px;
+  width: auto;
+}
+
+.signup-header {
+  /* padding: 15% 0 15% 0; */
+  line-height: 65px;
+  letter-spacing: 6px;
+  color: white;
+  font-size: 3em;
+}
+
+.signup-form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 0 8% 0;
+}
+
+.signup-form-section-wrapper input {
+  border: 0;
+  outline: 0;
+  border-bottom: 4px solid grey;
+  color: white;
+  background: black;
+  width: 85%;
+  height: 40px;
+  caret-color: red;
+}
+
+.form-label {
+  font-size: 30px;
+  color: grey;
+  letter-spacing: 1.5px;
+}
+
+.form-label-password-bottom {
+  color: grey;
+  padding: 5% 0 13% 0;
+  font-size: .9em;
+  letter-spacing: 1.5px;
+}
+
+.login-link {
+  text-decoration: none;
+}
+
+.signup-button {
+  padding: 30px;
+  color: black;
+  font-weight: bolder;
+  font-size: 1em;
+  border-radius: 22px;
+  width: 95%;
+  background-color: #73989A;
+  /* button background color is set in 'button' style near top */
+}
+
+.remove {
+  background: rgba(255, 220, 21, 0.7);
+  color: rgba(0, 0, 0, 1);
+}
+
+
+/* Color-changing caret styler */
+
+@keyframes rainbow {
+  0% {
+      caret-color: red;
+  }
+  20% {
+      caret-color: orange;
+  }
+  40% {
+      caret-color: yellow;
+  }
+  60% {
+      caret-color: green;
+  }
+  80% {
+      caret-color: blue;
+  }
+  100% {
+      caret-color: purple;
+  }
+}
+
+input {
+  width: 100%;
+  caret-color: red;
+  display: block;
+  font-size: 1.2em;
+  letter-spacing: 8px;
+}
+
+input:focus {
+  animation: 2s infinite rainbow;
+}

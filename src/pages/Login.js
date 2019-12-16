@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
+import Menu from '../components/Menu';
 
 class Login extends Component {
   state = { username: '', password: '' };
@@ -19,33 +20,38 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
+      <div className="login-page-wrapper">
 
-        <section>
-          <h1>Login</h1>
-        </section>
+          <Menu /> 
+          {/* Remove later */}
 
-        <section>
-          <form className="loginContainer" onSubmit={this.handleFormSubmit}>
-            <label>Username:</label>
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={this.handleChange}
-            />
+          <h1 className="login-header">Welcome<br/>Back.</h1>
 
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
 
-            <input type="submit" value="Login" />
+          <form className="login-form-wrapper" onSubmit={this.handleFormSubmit}>
+            <section className="login-form-section-wrapper">
+              <label>Username:</label>
+              <input
+                type="text"
+                name="username"
+                value={username}
+                onChange={this.handleChange}
+              />
+            </section>
+
+            <section className="login-form-section-wrapper">
+              <label>Password:</label>
+              <input
+                className="password-input-style"
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </section>
+
+            <input className="login-button" type="submit" value="Login" />
           </form>
-        </section>
 
       </div>
     );
