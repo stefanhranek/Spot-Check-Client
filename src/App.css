@@ -572,3 +572,91 @@ input:focus {
   font-size: 11px;
   letter-spacing: 2px;
 }
+
+/* MAPBOX CANVAS STYLES */
+/* MAPBOX CANVAS STYLES */
+/* MAPBOX CANVAS STYLES */
+/* MAPBOX CANVAS STYLES */
+/* MAPBOX CANVAS STYLES */
+/* MAPBOX CANVAS STYLES */
+
+canvas {
+  z-index: -3;    /* Given position is absolute, so used this to send back */
+}                 /* Markers still show through side menu */
+
+/* div.mapboxgl-marker {
+  z-index: -2;
+} */
+
+
+/* PROFILE */
+/* PROFILE */
+/* PROFILE */
+/* PROFILE */
+/* PROFILE */
+/* PROFILE */
+
+.banner {
+  height: 20vh;
+  background: black;
+  /* background: rgb(17, 24, 24); */
+  /* border-top: 3px solid;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%; */
+  margin-bottom: -45px;
+}
+
+.bio {
+  height: 45vh;
+  background: rgb(17, 24, 24);
+  border-top: 3px solid;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+.media {
+  height: 50vh;
+  background: rgb(33, 46, 46);
+  border-top: 3px solid;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+.picContainer {
+  float: left;
+  width: 100%;
+}
+
+.profilePic {
+  display: inline-block;
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  border: 8px double;
+  object-fit: cover;
+  margin-bottom: -100px;
+}
+
+.profilePin {
+  height: 1em;
+  width: auto;
+  margin-right: 10px;
+}
+
+.bioFiller {
+  height:42%;
+}
+
+.currentLocation {
+  margin: 30px;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.spotsAdded {
+  font-size: .9em;
+  font-weight: lighter;
+}

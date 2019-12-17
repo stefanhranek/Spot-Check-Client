@@ -36,8 +36,8 @@ class App extends Component {
           <PrivateRoute exact path="/favorites" component={Favorites} />
           <PrivateRoute exact path="/add-spot" component={AddSpot} />
           <PrivateRoute exact path="/spot/:id" component={SpotDetails} />
-          <PrivateRoute exact path="/profile" component={EditProfile} />
-          <PrivateRoute exact path="/edit-profile" component={Profile} />
+          <PrivateRoute exact path="/profile" component={Profile} />
+          <PrivateRoute exact path="/edit-profile" component={EditProfile} />
           <PrivateRoute exact path="/logout" />
         </Switch>
       </div>

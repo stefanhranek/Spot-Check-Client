@@ -8,19 +8,20 @@ class HamburgerMenu extends Component {
     return (
       <div
         style={{ 
-          border: '10px solid black', 
-          borderRadius: '15px', 
+          border: '6px solid white',  
+          boxShadow: '5px 20px',
           padding: '20px', 
           background: 'rgb(60, 60, 60, .96)',
           height: '100vh',
-          zIndex: '10' 
+          zIndex: '10',
+          position: 'static'
            }}
         >
 
           <div>
 
            <section className="topNav">
-            <p>Hello USERNAME!</p>
+            <p>Hello {user.username} ! </p>
            </section>
 
             <section>
