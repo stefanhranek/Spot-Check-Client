@@ -50,7 +50,7 @@ class Login extends Component {
               />
             </section>
 
-            <input className="login-button" type="submit" value="Login" />
+            <input className="login-button" type="submit" value="LOGIN" />
           </form>
 
       </div>

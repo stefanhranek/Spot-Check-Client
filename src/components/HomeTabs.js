@@ -7,10 +7,10 @@ export default function HomeTabs() {
     return (
         <div className="HomeTabs">
             <section className="tab">
-                <Link to={'/map'}> View Map</Link>
+                <Link to={'/map'}> MAP</Link>
             </section>
             <section className="tab">
-                <Link to={'/favorites'}> Favorites</Link>
+                <Link to={'/favorites'}> FAVORITES</Link>
             </section>
         </div>
     )

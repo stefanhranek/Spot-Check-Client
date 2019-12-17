@@ -1,5 +1,10 @@
+body {
+  margin:0;
+  padding:0;
+}
+
 * {
-  color: black;
+  color: #73989A;
 }
 
 html {
@@ -85,7 +90,7 @@ body {
   position: relative;
   z-index: 1;
   will-change: transform;
-  background-color: orange; /* A background-color is required */
+  background-color: #f58a42; /* A background-color is required */
   min-height: 1vh;
 }
 
@@ -178,13 +183,13 @@ Menu {
 }
 
 div.Menu {
-  background: orange;
+  background: #f58a42;
 }
 
 .topNav {
   border-bottom: 5px double black;
   margin-bottom: 15px;
-  color: orange;
+  color: #f58a42;
 }
 
 .hamburgerList {
@@ -219,6 +224,18 @@ div.Menu {
   display: flex;
   flex-direction: column;
   color:red;
+}
+
+input.login-button {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 20px;
+  padding: 6px;
 }
 
 
@@ -274,6 +291,25 @@ div.Menu {
   text-align: center;
   padding: 20px;
   text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  width: 50%;
+}
+
+.tab:hover {
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 20px;
+  border-bottom: 10px double #f58a42;
+}
+
+a {
+  color: black;
 }
 
 
@@ -483,7 +519,7 @@ p.account-message {
 }
 
 input {
-  width: 100%;
+  width: 95%;
   caret-color: red;
   display: block;
   font-size: 1.2em;
@@ -498,4 +534,41 @@ input:focus {
 
 .favoriteListItem {
   color: whitesmoke;
+}
+
+/* ADD A SPOT */
+
+.indoorLabel {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  color: white;
+}
+
+.addSpotLabels {
+  margin: 50px 0px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #73989A;
+  width: 100vw;
+  color: white;
+}
+
+.addSpotContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  margin: 3vh 5vw;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.addSpotInput {
+  margin: 20px 0px;
+  background: inherit;
+  border: 1px groove #73989A;
+  padding: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
 }

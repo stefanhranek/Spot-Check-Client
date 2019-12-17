@@ -37,75 +37,94 @@ class AddSpot extends Component {
       const { name, type, status, indoor, description, images, location } = this.state;
       return (
         <div>
-        <Menu />
-          <h1>Add New Skate Spot</h1>
-          <form onSubmit={this.handleFormSubmit}>
-            <label>Name your spot</label>
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={this.handleChange}
-            />
-  
-            <label>Type of spot</label>
-            <input
-              type="text"
-              name="type"
-              value={type}
-              onChange={this.handleChange}
-            />
-  
-            <label>Status</label>
-            <input
-              type="text"
-              name="status"
-              value={status}
-              onChange={this.handleChange}
-            />
+          <Menu />
+          <section className="addSpotContainer">
+          
+            {/* <h1>Add New Skate Spot</h1> */}
+            <form onSubmit={this.handleFormSubmit}>
+              <label className="addSpotLabels">NAME YOUR SPOT</label>
+              <input
+                className="addSpotInput"
+                type="text"
+                name="name"
+                value={name}
+                onChange={this.handleChange}
+                placeholder="Choose wisely ..."
+              />
+    
+              <label className="addSpotLabels">TYPE OF SPOT</label>
+              <input
+                className="addSpotInput"
+                type="text"
+                name="type"
+                value={type}
+                onChange={this.handleChange}
+                placeholder="Park / Street / DIY"
+              />
+    
+              <label className="addSpotLabels">STATUS</label>
+              <input
+                className="addSpotInput"
+                type="text"
+                name="status"
+                value={status}
+                onChange={this.handleChange}
+                placeholder="Active / WIP / RIP"
+              />
 
-            <label>Indoor?</label>
-                <input
-                type="radio"
-                name="indoor"
-                value="indoor"
-                onChange={this.handleCheckboxChange}
-                />
-                <input
-                type="radio"
-                name="indoor"
-                value="outdoor"
-                onChange={this.handleCheckboxChange}
-                />
+              <label className="addSpotLabels">INDOOR?</label>
+                  <div className="indoorLabel">
+                    <input
+                    className="addSpotInput"
+                    id="indoor"
+                    type="radio"
+                    name="indoor"
+                    value="indoor"
+                    onChange={this.handleCheckboxChange}
+                    />
+                    <label for="indoor">Indoor</label>
+                    <input
+                    className="addSpotInput"
+                    id="outdoor"
+                    type="radio"
+                    name="indoor"
+                    value="outdoor"
+                    onChange={this.handleCheckboxChange}
+                    />
+                    <label for="outdoor">Outdoor</label>
+                  </div>
 
 
-            <label>Description</label>
-            <input
-              type="text"
-              name="description"
-              value={description}
-              onChange={this.handleChange}
-            />
+              <label className="addSpotLabels">DESCRIPTION</label>
+              <textarea cols="54" rows="6"
+                className="addSpotInput"
+                type="text"
+                name="description"
+                value={description}
+                onChange={this.handleChange}
+                placeholder="Legendary spot ..."
+              />
 
 
-            {/* <label>Images</label>
-            <input
-              type="text"
-              name="images"
-              value={images}
-              onChange={this.handleChange}
-            /> */}
+              {/* <label>Images</label>
+              <input
+                type="text"
+                name="images"
+                value={images}
+                onChange={this.handleChange}
+              /> */}
 
-            {/* <label>Location</label>
-            <input
-              type="text"
-              name="location"
-              value={location}
-              onChange={this.handleChange}
-            /> */}
-  
-            <input type="submit" value="Signup" />
-          </form>
+              {/* <label>Location</label>
+              <input
+                type="text"
+                name="location"
+                value={location}
+                onChange={this.handleChange}
+              /> */}
+    
+              <input type="submit" value="ADD A SPOT" />
+            </form>
+          </section>
         </div>
       );
     }
