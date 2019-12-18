@@ -272,6 +272,15 @@ input.login-button {
   line-height: 50px;
 }
 
+button.marker-btn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
 /*  HOMETABS COMPONENT  */
 /*  HOMETABS COMPONENT  */
 /*  HOMETABS COMPONENT  */
@@ -295,6 +304,8 @@ input.login-button {
   font-weight: bold;
   letter-spacing: 2px;
   width: 50%;
+  transform: scale(1);
+  transition: all .19s ease-in-out;
 }
 
 .tab:hover {
@@ -306,6 +317,9 @@ input.login-button {
   letter-spacing: 2px;
   font-size: 20px;
   border-bottom: 10px double #f58a42;
+  transition: all .19s ease;
+  transform: scale(1.1);
+
 }
 
 a {
@@ -368,7 +382,7 @@ label.form-label {
 .password-input-style {
   padding-top: 5px;
   font-size: 1.2em;
-  letter-spacing: 1.15em;
+  letter-spacing: 1em;
 }
 
 .form-label-password-bottom {
@@ -411,6 +425,10 @@ p.account-message {
 
 
 /* Sign up page */
+
+.password-input-style {
+  letter-spacing: 2px;
+}
 
 .signup-page-wrapper {
   display: flex;

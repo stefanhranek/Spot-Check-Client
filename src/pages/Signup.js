@@ -38,6 +38,7 @@ class Signup extends Component {
           <section className="signup-form-section-wrapper">
             <label >Password:</label>
             <input
+              className="password-input-style"
               type="password"
               name="password"
               value={password}

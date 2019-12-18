@@ -4,17 +4,23 @@ import * as parkDate from "./../data/skateboard-parks.json";
 import HomeTabs from '../components/HomeTabs.js';
 import Menu from '../components/Menu.js';
 
-
+const handleMapChange =(e) => {
+  console.dir(e.lngLat);
+  console.dir( e);
+  
+  
+}
 
 export default function MapView() {
   const [viewport, setViewport] = useState({
-    latitude: 45.4211,
-    longitude: -75.6903,
+    latitude: 41.3851,
+    longitude: 2.1734,  /* set to Barcelona's location */
     width: "100vw",
     height: "88vh",
-    zoom: 7
+    zoom: 10
   });
   const [selectedPark, setSelectedPark] = useState(null);
+
 
   useEffect(() => {
     const listener = e => {
@@ -29,7 +35,14 @@ export default function MapView() {
     };
   }, []);
 
+
+  console.log('selectedPark', selectedPark);
+  console.log('setSelectedPark', setSelectedPark);
+
+  
+
   return (
+    
     <div>
       <Menu />
       <HomeTabs />
@@ -40,6 +53,7 @@ export default function MapView() {
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
+        onClick={handleMapChange}
       >
         {parkDate.features.map(park => (
           <Marker

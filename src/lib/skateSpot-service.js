@@ -4,7 +4,7 @@ import axios from 'axios';
 class Spot {
     constructor() {
         this.spot = axios.create({
-          baseURL: process.env.REACT_APP_API_URL,
+          baseURL: process.env.REACT_APP_API_URL + '/skatespots',
           withCredentials: true,
         });
       }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 import Menu from '../components/Menu';
+import queryString from 'query-string';
 
 class AddSpot extends Component {
     state = { 
@@ -13,6 +14,14 @@ class AddSpot extends Component {
         images: [],
         location: []
      };
+
+     componentDidMount() {
+      const values = queryString.parse(this.props.location.search)
+      console.log(values.filter) // "top"
+      console.log(values.origin) // "im"
+      console.log('PARSED URL VALUES FOR LOCATION', values);
+      
+    }
 
     handleFormSubmit = event => {
       event.preventDefault();
