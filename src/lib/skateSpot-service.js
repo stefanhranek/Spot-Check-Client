@@ -17,9 +17,9 @@ class Spot {
     }
   
     // spot.getOneById(spotId)
-    getOneSkateSpotById(id) {
+    getOneSkateSpotById(_id) {
       return this.spot
-                .get(`/${id}`)
+                .get(`/spot-details/${_id}`)
                 .then(({ data }) => data);
     }
 

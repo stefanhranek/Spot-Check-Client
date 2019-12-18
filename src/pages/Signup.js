@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
-import Menu from '../components/Menu';
 
 class Signup extends Component {
   state = { username: '', password: '', email: '' };

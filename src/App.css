@@ -161,6 +161,11 @@ width: 60px;
 /* MENU */
 /* MENU */
 
+section.topNav {
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
 #topNav {
   background: orange;
   height: 60px;
@@ -186,10 +191,22 @@ div.Menu {
   background: #f58a42;
 }
 
+.spotCheckHeader {
+  color: rgb(238, 228, 228);
+}
+
 .topNav {
-  border-bottom: 5px double black;
+  border-bottom: 10px double #f58a42;
   margin-bottom: 15px;
   color: #f58a42;
+  
+}
+
+.topNav {
+  border-bottom: 10px double #f58a42;
+  margin-bottom: 15px;
+  color: #f58a42;
+  
 }
 
 .hamburgerList {
@@ -304,8 +321,9 @@ button.marker-btn {
   font-weight: bold;
   letter-spacing: 2px;
   width: 50%;
-  transform: scale(1);
+  /* transform: scale(1); */
   transition: all .19s ease-in-out;
+  border-bottom: 6px solid #f58a4200
 }
 
 .tab:hover {
@@ -315,10 +333,9 @@ button.marker-btn {
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: 20px;
-  border-bottom: 10px double #f58a42;
+  border-bottom: 6px solid #f58a42;
   transition: all .19s ease;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 
 }
 
@@ -381,8 +398,8 @@ label.form-label {
 
 .password-input-style {
   padding-top: 5px;
-  font-size: 1.2em;
-  letter-spacing: 1em;
+  font-size: 1em;
+  letter-spacing: 4px;
 }
 
 .form-label-password-bottom {
@@ -426,9 +443,6 @@ p.account-message {
 
 /* Sign up page */
 
-.password-input-style {
-  letter-spacing: 2px;
-}
 
 .signup-page-wrapper {
   display: flex;
@@ -541,7 +555,7 @@ input {
   caret-color: red;
   display: block;
   font-size: 1.2em;
-  letter-spacing: 8px;
+  letter-spacing: 2px;
 }
 
 input:focus {
@@ -601,6 +615,19 @@ input:focus {
 canvas {
   z-index: -3;    /* Given position is absolute, so used this to send back */
 }                 /* Markers still show through side menu */
+
+.addNewSpotPopUp {
+  background: #f58a42;
+  color: white;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 75vh 20px;
+}
+
+a {
+  text-decoration: none;
+}
 
 /* div.mapboxgl-marker {
   z-index: -2;
@@ -677,4 +704,21 @@ canvas {
 .spotsAdded {
   font-size: .9em;
   font-weight: lighter;
+}
+
+/* SPOT DETAILS */
+
+.spotNameAndLikeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.infoDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.spotDetailsContainer {
+  margin: 10%;
 }

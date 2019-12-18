@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
-import Menu from '../components/Menu';
 
 class Login extends Component {
   state = { username: '', password: '' };

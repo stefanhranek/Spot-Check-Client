@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 import Menu from '../components/Menu';
 import queryString from 'query-string';
@@ -26,8 +25,7 @@ class AddSpot extends Component {
     handleFormSubmit = event => {
       event.preventDefault();
       const { name, type, status, indoor, description, images, location } = this.state;
-      //  console.log('Signup -> form submit', { username, password });
-      this.props.signup({ name, type, status, indoor, description, images, location }); // props.signup is Provided by withAuth() and Context API
+      this.props.addSpot({ name, type, status, indoor, description, images, location }); // props.signup is Provided by withAuth() and Context API
     };
   
     handleChange = event => {

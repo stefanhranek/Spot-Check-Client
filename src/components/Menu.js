@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Router} from 'react-router';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+// import { Router} from 'react-router';
+// import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Slideout from 'slideout';
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -36,7 +36,7 @@ class Menu extends Component {
                 <button className="toggle-button">☰</button>
               </section>
               <section id="topNav">
-                <h1>Spot Check</h1>
+                <h1 className="spotCheckHeader">Spot Check</h1>
               </section>
             </header>
           </main>

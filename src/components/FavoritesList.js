@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import userService from './../lib/user-service';
 
 export default class FavoritesList extends Component {
@@ -19,10 +20,18 @@ export default class FavoritesList extends Component {
         const { favoritesList } = this.state;
         const allMyFavorites = favoritesList.map( element => {
             return <div key={element._id}>
+                <Link to={`/spot/${element._id}`} 
+                    name={element.name}
+                    type={element.type}
+                    status={element.status} 
+                    indoor={element.indoor} 
+                    description={element.description} 
+                    >
                     <h1 className="favoriteListItem">{element.name}</h1>
+                </Link>
                 </div>
         }) 
-        console.log('HEREREREREEEEEEEEEEEEEEEEE',allMyFavorites)
+        console.log('Here are all of the FAVORITES',allMyFavorites)
         
         return (
             <div>

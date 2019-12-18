@@ -27,8 +27,8 @@ class Profile extends Component {
                     <div className="bioFiller"></div>
                     <div className="bioFloatDown">
                         <h1 className="username"> @ {user.username} </h1>
-                        <h3 className="currentLocation"> <img className="profilePin" src="./../../pin.svg" alt="location pin"></img> San Diego, CA </h3>
-                        <h3 className="spotsAdded"> {user.myspots} !2! SPOTS ADDED </h3>
+                        <h3 className="currentLocation"> <img className="profilePin" src="./../../pin.svg" alt="location pin"></img> {user.city} </h3>
+                        <h3 className="spotsAdded"> <b>{user.mySpots.length}</b> SPOTS ADDED </h3>
                     </div>
                 </section>
 

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import * as parkDate from "./../data/skateboard-parks.json";
 import HomeTabs from '../components/HomeTabs.js';
 import Menu from '../components/Menu.js';
 import skateSpotService from './../lib/skateSpot-service';
 import { Link } from 'react-router-dom';
-import queryString from 'query-string';
+
 
 
 class MapViewStateful extends React.Component {
@@ -66,11 +65,17 @@ class MapViewStateful extends React.Component {
   //   };
   // }, []);
 
+  renderSpotDetailsPopup = () => {
+
+    return <Link style={{ width: "100%", height: "100%", zIndex: 9999 }} to={`/spot-details/:id`} ><div className="addNewSpotPopUp">Check out Spot Details</div></Link>;
+  } 
+
+
   renderAddSpotPopup = () => {
 
     const [ lng, lat ] = this.state.newPin;
 
-    return <Link style={{ width: "100%", height: "100%", zIndex: 9999 }} to={`/add-spot?lng=${lng}&lat=${lat}`} >Add new spot?</Link>;
+    return <Link style={{ width: "50%", height: "50%", zIndex: 9999 }} to={`/add-spot?lng=${lng}&lat=${lat}`} ><div className="addNewSpotPopUp">Add new spot?</div></Link>;
   } 
 
   render () {
@@ -110,7 +115,7 @@ class MapViewStateful extends React.Component {
           </Marker>
         ))}
 
-        {selectedPark ? (
+        {selectedPark ? (this.renderSpotDetailsPopup(), (
           <Popup
             longitude={selectedPark.location.coordinates[0]}
             latitude={selectedPark.location.coordinates[1]}
@@ -118,12 +123,14 @@ class MapViewStateful extends React.Component {
               this.setSelectedPark(null);
             }}
           >
-            <div>
-              <h2>{selectedPark.name}</h2>
-              <p>{selectedPark.description}</p>
-            </div>
+            
+              <div>
+                <h2>{selectedPark.name}</h2>
+                <p>{selectedPark.description}</p>
+              </div>
+            
           </Popup>
-        ) : null}
+        )) : null}
 
         {newPin ? (
           <Popup

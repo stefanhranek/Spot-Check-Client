@@ -22,11 +22,18 @@ class User {
             return response.data;
             })
         } 
+
+
+        //   user.edit()
+        getUserByIdAndUpdate(_id) {
+    
+          return this.user
+                    .get(`/${_id}`)
+                    .then(({ data }) => data);
+        }
+
       }
 
-
-
-    //   user.edit()
 
 
 

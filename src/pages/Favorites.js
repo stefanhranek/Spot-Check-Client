@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import React from 'react'
+// import { Link } from "react-router-dom";
 // import countries from "../countries.json";
-import skatespots from "./../data/skateboard-parks.json"
 // import shortid from "shortid";
 import Menu from '../components/Menu'
 import HomeTabs from '../components/HomeTabs.js';
 import FavoritesList from '../components/FavoritesList.js';
 
 // import services
-import userService from './../lib/user-service';
+// import userService from './../lib/user-service';
 
 export default function Favorites(props) {
     return (
