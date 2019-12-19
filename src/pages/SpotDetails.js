@@ -37,7 +37,7 @@ class SpotDetails extends Component {
                 console.log('favorites',favorites);
 
                 return (
-                    <div>
+                    <div className="SpotDetailsPage">
                         <Menu />
                         <h1 className="detailsNameHeader">{favorites.name}</h1>
                         <div className="spotDetailsBanner"></div>
@@ -67,7 +67,9 @@ class SpotDetails extends Component {
                                     <p className="spotDetailValues">{favorites.description}</p>
                             </section>
                             </div>
-                        <button onSubmit={this.handleButtonSubmit} className="goBackButtonDetails">Go Back</button>
+                                <Link to="/map">
+                                    <button onSubmit={this.handleButtonSubmit} className="goBackButtonDetails">Go Back</button>
+                                </Link>
                         </div>
                         <BottomNav />
                     </div>

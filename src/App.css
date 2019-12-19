@@ -183,11 +183,11 @@ section#topNav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: #f58a42;
+  background: rgb(56, 51, 51);
   height: 60px;
   text-align: center;
   align-content: center;
-  box-shadow: 0 4px 2px -3px rgb(100, 100, 100);
+  box-shadow: 0 4px 2px -5px rgb(100, 100, 100);
 }
 
 Menu {
@@ -201,13 +201,6 @@ div.Menu {
 
 .spotCheckHeader {
   color: rgb(238, 228, 228);
-}
-
-.topNav {
-  border-bottom: 10px double #f58a42;
-  margin-bottom: 15px;
-  color: #f58a42;
-  
 }
 
 .topNav {
@@ -348,7 +341,7 @@ button.marker-btn {
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
-  border-bottom: 6px solid #f58a42;
+  border-bottom: 4px solid #e74b3c;
   transition: all .19s ease;
   /* transform: scale(1.1); */
 
@@ -669,13 +662,16 @@ canvas {
 }                 /* Markers still show through side menu */
 
 .addNewSpotPopUp {
-  background: #f58a42;
+  background: #e74b3c;
   color: white;
   padding: 10px;
-  border: 2px solid white;
+  border: 4px solid black;
   border-radius: 10px;
   margin: 65vh 20px;
   text-align: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  box-shadow: 0 4px 2px -3px rgb(100, 100, 100);
 }
 
 a {
@@ -857,7 +853,7 @@ margin-top: 10%;
 /* BOTTOM NAV BAR */
 
 .navbar {
-  background: #f58a42;
+  background-color: #73989A;
   height: 62px;
   display: flex;
   flex-direction: row;
@@ -914,4 +910,24 @@ margin-top: 10%;
 .descriptionTitle {
   border-bottom: 2px solid white;
   padding-bottom: 15px;
+}
+
+.mapboxgl-popup-content {
+  box-shadow: 3px 3px 4px -3px rgb(100, 100, 100);
+  max-width: 200px;
+  font-size: 13px;
+}
+
+.spotDetailsOnMap {
+  color: black;
+  text-align: center;
+}
+
+.spotTitleOnMap {
+  border-bottom: 2px double black;
+  padding-bottom: 5px;
+}
+
+.SpotDetailsPage {
+  height: 110vh;
 }
