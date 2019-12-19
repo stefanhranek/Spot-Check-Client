@@ -63,7 +63,7 @@ class SpotDetails extends Component {
                                     <p className="spotDetailValues">{favorites.indoor}</p>
                                 </section>
                                 
-                                <h3>DESCRIPTION</h3>
+                                <h3 className="descriptionTitle">DESCRIPTION</h3>
                                     <p className="spotDetailValues">{favorites.description}</p>
                             </section>
                             </div>
