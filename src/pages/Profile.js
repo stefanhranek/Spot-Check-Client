@@ -3,6 +3,7 @@ import Menu from '../components/Menu';
 import userService from './../lib/user-service';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
+import BottomNav from '../components/BottomNav';
 
 
 class Profile extends Component {
@@ -37,6 +38,7 @@ class Profile extends Component {
                 <section className="media">
                     <p>Media</p>
                 </section>
+                <BottomNav />
             </div>
         )
     }

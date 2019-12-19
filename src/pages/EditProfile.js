@@ -4,11 +4,15 @@ import Menu from '../components/Menu';
 // import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 import userService from '../lib/user-service';
+import BottomNav from '../components/BottomNav';
 
 
 class EditProfile extends Component {
     state = {
-        user: {}
+        username: '',
+        password: '',
+        email: '',
+        city: ''
     }
 
     handleFormSubmit = event => {
@@ -28,6 +32,7 @@ class EditProfile extends Component {
 
     render() {
         const { user, logout, isLoggedin } = this.props;
+        const { username, email, password, city } = this.props
         return (
             <div>
                 <Menu />
@@ -49,7 +54,7 @@ class EditProfile extends Component {
                             className="addSpotInput"
                             type="text"
                             name="username"
-                            value={user.username}
+                            value={username}
                             onChange={this.handleChange}
                             />
                         </section>
@@ -60,7 +65,7 @@ class EditProfile extends Component {
                             className="addSpotInput"
                             type="password"
                             name="password"
-                            value={user.password}
+                            value={password}
                             onChange={this.handleChange}
                             />
                         </section>
@@ -71,7 +76,7 @@ class EditProfile extends Component {
                             className="addSpotInput"
                             type="email"
                             name="email"
-                            value={user.email}
+                            value={email}
                             onChange={this.handleChange}
                             />
                         </section>
@@ -82,17 +87,17 @@ class EditProfile extends Component {
                             className="addSpotInput"
                             type="text"
                             name="city"
-                            value={user.city}
+                            value={city}
                             onChange={this.handleChange}
                             />
                         </section>
 
-                        <input className="signup-button" type="submit" value="Save changes" />
+                        <input className="editProfile-button" type="submit" value="Save changes" />
                         </form>
                         
                     </div>
                 </section>
-
+                <BottomNav />
             </div>
         )
     }

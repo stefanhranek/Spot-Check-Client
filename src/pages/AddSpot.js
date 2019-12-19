@@ -3,6 +3,7 @@ import { withAuth } from '../lib/AuthProvider';
 import Menu from '../components/Menu';
 import queryString from 'query-string';
 import skateSpotService from './../lib/skateSpot-service.js'
+import BottomNav from '../components/BottomNav';
 
 class AddSpot extends Component {
     state = { 
@@ -145,6 +146,7 @@ class AddSpot extends Component {
             </form>
           </section>
           <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
+          <BottomNav />
         </div>
       );
     }

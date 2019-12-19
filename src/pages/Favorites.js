@@ -5,6 +5,7 @@ import React from 'react'
 import Menu from '../components/Menu'
 import HomeTabs from '../components/HomeTabs.js';
 import FavoritesList from '../components/FavoritesList.js';
+import BottomNav from '../components/BottomNav';
 
 // import services
 // import userService from './../lib/user-service';
@@ -18,7 +19,7 @@ export default function Favorites(props) {
             <section>
               <FavoritesList />
             </section>
-            
+            <BottomNav />
         </div>
       );
     }

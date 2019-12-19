@@ -4,6 +4,7 @@ import userService from './../lib/user-service';
 import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 import skateSpotService from '../lib/skateSpot-service';
+import BottomNav from '../components/BottomNav';
 
 
 class SpotDetails extends Component {
@@ -61,6 +62,7 @@ class SpotDetails extends Component {
                             </div>
                         <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
                         </div>
+                        <BottomNav />
                     </div>
                 )
             }
