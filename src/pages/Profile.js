@@ -12,20 +12,16 @@ class Profile extends Component {
             <div>
                 <Menu />
 
-
-                
-
-
-                <h1>PROFILE</h1>
-                <section className="banner">
-                    <div className="picContainer">
+                {/* <h1>PROFILE</h1> */}
+                <section className="bannerProfile">
+                    <div className="picContainerProfile">
                         <img className="profilePic" src="./../../profile-pic.png" alt="profile-pic"/>
                     </div>
                 </section>
 
-                <section className="bio">
-                    <div className="bioFiller"></div>
-                    <div className="bioFloatDown">
+                <section className="bioProfile">
+                    <div className="bioFillerProfile"></div>
+                    <div className="bioFloatDownProfile">
                         <h1 className="username"> @ {user.username} </h1>
                         <h3 className="currentLocation"> <img className="profilePin" src="./../../pin.svg" alt="location pin"></img> {user.city} </h3>
                         <h3 className="spotsAdded"> <b>{user.mySpots.length}</b> SPOTS ADDED </h3>

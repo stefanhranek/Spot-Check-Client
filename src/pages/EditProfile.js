@@ -32,20 +32,21 @@ class EditProfile extends Component {
             <div>
                 <Menu />
 
-                <h1>EDIT PROFILE</h1>
+                
                 <section className="banner">
-                    <div className="picContainer">
+                    <div className="picContainerEdit">
                         <img className="profilePic" src="./../../profile-pic.png" alt="profile-pic"/>
                     </div>
                 </section>
 
                 <section className="bio">
-                    <div className="bioFiller"></div>
+                    {/* <div className="bioFiller"></div> */}
                     <div className="bioFloatDown">
-                    <form className="signup-form-wrapper" onSubmit={this.handleFormSubmit}>
-                        <section className="signup-form-section-wrapper">
-                            <label >Username:</label>
+                    <form className="editProfileForm" onSubmit={this.handleFormSubmit}>
+                        <section className="editProfileSectionWrapper">
+                            <label className="addSpotLabels">USERNAME</label>
                             <input
+                            className="addSpotInput"
                             type="text"
                             name="username"
                             value={user.username}
@@ -53,10 +54,10 @@ class EditProfile extends Component {
                             />
                         </section>
 
-                        <section className="signup-form-section-wrapper">
-                            <label >Password:</label>
+                        <section className="editProfileSectionWrapper">
+                            <label className="addSpotLabels">PASSWORD</label>
                             <input
-                            className="password-input-style"
+                            className="addSpotInput"
                             type="password"
                             name="password"
                             value={user.password}
@@ -64,10 +65,10 @@ class EditProfile extends Component {
                             />
                         </section>
 
-                        <section className="signup-form-section-wrapper">
-                            <label >Email:</label>
+                        <section className="editProfileSectionWrapper">
+                            <label className="addSpotLabels">EMAIL</label>
                             <input
-                            className="password-input-style"
+                            className="addSpotInput"
                             type="email"
                             name="email"
                             value={user.email}
@@ -75,9 +76,10 @@ class EditProfile extends Component {
                             />
                         </section>
 
-                        <section className="signup-form-section-wrapper">
-                            <label >Current City:</label>
+                        <section className="editProfileSectionWrapper">
+                            <label className="addSpotLabels">CURRENT CITY</label>
                             <input
+                            className="addSpotInput"
                             type="text"
                             name="city"
                             value={user.city}
@@ -85,15 +87,12 @@ class EditProfile extends Component {
                             />
                         </section>
 
-                        <input className="signup-button" type="submit" value="Submit Changes" />
+                        <input className="signup-button" type="submit" value="Save changes" />
                         </form>
                         
                     </div>
                 </section>
 
-                <section className="media">
-                    <p>Media</p>
-                </section>
             </div>
         )
     }
