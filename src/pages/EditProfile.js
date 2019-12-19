@@ -4,6 +4,7 @@ import Menu from '../components/Menu';
 // import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 import userService from '../lib/user-service';
+import authService from '../lib/auth-service';
 import BottomNav from '../components/BottomNav';
 
 
@@ -12,14 +13,38 @@ class EditProfile extends Component {
         username: '',
         password: '',
         email: '',
-        city: ''
+        city: '',
+        errorMessage: undefined
+    }
+
+    componentDidMount() {
+        authService
+            .me()
+            .then( (user) => {
+                this.setState({
+                    username: user.username,
+                    email: user.email,
+                    city: user.city
+                })
+
+            })
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
-        const { user } = this.state;
+        const { username, email, password, city } = this.state
+        if (password === '') {
+            this.setState( {errorMessage: 'Password was left blank'} )
+            setInterval( () => {
+                this.setState(
+                    {errorMessage:undefined}
+                )
+            } , 5000 )
+            return;
+        } 
+
         userService
-          .getUserByIdAndUpdate({ user })
+          .getUserByIdAndUpdate({ username, email, password, city })
           .then( () => {
             this.props.history.goBack();
           })
@@ -32,7 +57,7 @@ class EditProfile extends Component {
 
     render() {
         const { user, logout, isLoggedin } = this.props;
-        const { username, email, password, city } = this.props
+        const { username, email, password, city } = this.state
         return (
             <div>
                 <Menu />
@@ -67,6 +92,7 @@ class EditProfile extends Component {
                             name="password"
                             value={password}
                             onChange={this.handleChange}
+                            placeholder={this.state.errorMessage ? this.state.errorMessage : 'Enter password' }
                             />
                         </section>
 

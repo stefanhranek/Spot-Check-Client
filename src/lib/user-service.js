@@ -4,7 +4,7 @@ import axios from 'axios';
 class User {
     constructor() {
         this.user = axios.create({
-          baseURL: process.env.REACT_APP_API_URL,
+          baseURL: process.env.REACT_APP_API_URL + '/user',
           withCredentials: true,
         });
       }
@@ -23,15 +23,21 @@ class User {
             })
         } 
 
-
         //   user.edit()
-        getUserByIdAndUpdate(_id) {
-    
+        getUserByIdAndUpdate(user) {
+          const { username, email, password, city } = user
           return this.user
-                    .get(`/${_id}`)
+                    .put({ username, password, city, email })
                     .then(({ data }) => data);
         }
 
+        addToFavorites() {
+
+          return this.user.get('/')
+          .then( (data) => console.log(data))
+          .catch( (err) => console.log(err));
+
+        }
 
       }
 

@@ -29,9 +29,9 @@ class Profile extends Component {
                         <Link to="/edit-profile">
                             <button className="editProfileButton">Edit Profile</button>
                         </Link>
-                        <Link to="/logout">
+                        
                             <button onClick={logout} className="editProfileButton">Log Out</button>
-                        </Link>
+                        
                     </div>
                 </section>
 
