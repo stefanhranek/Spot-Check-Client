@@ -5,17 +5,27 @@ import userService from './../lib/user-service';
 export default class FavoritesList extends Component {
     state = { favoritesList: [] };
 
-    
-    componentDidMount() {
+    getFavorites = () => {
         userService
         .getMyFavorites()
         .then( (data) => {
             console.log('HERE IS THE DATA',data);
             this.setState({favoritesList: data.favorites})
         })
-        .catch( (err) => console.log(err));
+        .catch( (err) => console.log(err))
+    }
+
+    componentDidMount() {
+        this.getFavorites();
     }
     
+    removeFavorite = (id) => {
+        userService.removeFromFavorite(id)
+        .then(() => {
+        this.getFavorites();
+      })
+    }
+
     render() {
         const { favoritesList } = this.state;
         const allMyFavorites = favoritesList.map( element => {
@@ -32,6 +42,9 @@ export default class FavoritesList extends Component {
                         <h1 className="favoriteListItem">{element.name}</h1>
                     </section>
                 </Link>
+                        <button onClick={()=>this.removeFavorite(element._id)} >
+                            <img className="favoritesIcon" src="./../../skateSpotIcon.png" alt="icon"/>
+                        </button>
                 </div>
         }) 
         console.log('Here are all of the FAVORITES',allMyFavorites)

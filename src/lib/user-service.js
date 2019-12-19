@@ -31,15 +31,21 @@ class User {
                     .then(({ data }) => data);
         }
 
-        addToFavorites() {
 
-          return this.user.get('/')
-          .then( (data) => console.log(data))
-          .catch( (err) => console.log(err));
-
-        }
-
+        addToFavorites(spotId) {
+          return this.user
+                        .patch('/user', { spotId })
+        
       }
+
+      removeFromFavorite(spotId) {
+        return this.user
+                      .patch('/user/remove', { spotId })
+      
+    }
+
+      
+}
 
 
 

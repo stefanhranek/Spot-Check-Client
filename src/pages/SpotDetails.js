@@ -22,7 +22,6 @@ class SpotDetails extends Component {
                 const { id } = this.props.match.params;
                 console.log('this.props', this.props);
 
-
                 skateSpotService
                 .getOneSkateSpotById(id)
                 .then( (response) => {
@@ -31,6 +30,21 @@ class SpotDetails extends Component {
                 })
                 .catch( (err) => console.log(err));
             }
+
+            handleButtonSubmit = event => {
+                event.then( () => {
+                    this.props.history.goBack();
+                  })
+              };
+
+            addToFavorites = event => {
+                const { id } = this.props.match.params;
+                    userService.addToFavorites(id)
+                  .then(() => {
+                    this.props.history.push("/favorites");
+                  })
+              };
+
 
             render() {
                 const { favorites } = this.state;
@@ -43,8 +57,9 @@ class SpotDetails extends Component {
                         <div className="spotDetailsBanner"></div>
                         <div className="spotDetailsContainer">
                             <div className="spotNameAndLikeButton">
-                            
-                                <button className="addToFavorites">Add to favorites</button>
+                                    <button 
+                                        onClick={this.addToFavorites}
+                                        className="addToFavorites">Add to favorites</button>
                             </div>
                             <div>
                                 <h3>INFORMATION</h3>
