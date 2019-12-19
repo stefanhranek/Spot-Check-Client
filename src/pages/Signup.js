@@ -25,7 +25,7 @@ class Signup extends Component {
         <h1 className="signup-header">Create<br/>Account.</h1>
         <form className="signup-form-wrapper" onSubmit={this.handleFormSubmit}>
           <section className="signup-form-section-wrapper">
-            <label >Username:</label>
+            <label className="signupLabel">Username:</label>
             <input
               type="text"
               name="username"
@@ -35,7 +35,7 @@ class Signup extends Component {
           </section>
 
           <section className="signup-form-section-wrapper">
-            <label >Password:</label>
+            <label className="signupLabel">Password:</label>
             <input
               className="password-input-style"
               type="password"
@@ -46,7 +46,7 @@ class Signup extends Component {
           </section>
 
           <section className="signup-form-section-wrapper">
-            <label >Email:</label>
+            <label className="signupLabel">Email:</label>
             <input
               className="password-input-style"
               type="email"

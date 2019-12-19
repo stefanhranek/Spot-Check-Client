@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
 import Menu from '../components/Menu';
 import queryString from 'query-string';
+import skateSpotService from './../lib/skateSpot-service.js'
 
 class AddSpot extends Component {
     state = { 
@@ -16,16 +17,27 @@ class AddSpot extends Component {
 
      componentDidMount() {
       const values = queryString.parse(this.props.location.search)
+      const { lng, lat } = values;
       console.log(values.filter) // "top"
       console.log(values.origin) // "im"
       console.log('PARSED URL VALUES FOR LOCATION', values);
-      
+      this.setState({location:[Number(lng),Number(lat)]});
     }
+
+    handleButtonSubmit = event => {
+      event.then( () => {
+          this.props.history.goBack();
+        })
+    };
 
     handleFormSubmit = event => {
       event.preventDefault();
       const { name, type, status, indoor, description, images, location } = this.state;
-      this.props.addSpot({ name, type, status, indoor, description, images, location }); // props.signup is Provided by withAuth() and Context API
+      skateSpotService
+        .addNewSkateSpot({ name, type, status, indoor, description, images, location })
+        .then( () => {
+          this.props.history.goBack();
+        })
     };
   
     handleChange = event => {
@@ -89,7 +101,7 @@ class AddSpot extends Component {
                     value="indoor"
                     onChange={this.handleCheckboxChange}
                     />
-                    <label for="indoor">Indoor</label>
+                    <label htmlFor="indoor">Indoor</label>
                     <input
                     className="addSpotInput"
                     id="outdoor"
@@ -98,7 +110,7 @@ class AddSpot extends Component {
                     value="outdoor"
                     onChange={this.handleCheckboxChange}
                     />
-                    <label for="outdoor">Outdoor</label>
+                    <label htmlFor="outdoor">Outdoor</label>
                   </div>
 
 
@@ -132,6 +144,7 @@ class AddSpot extends Component {
               <input type="submit" value="ADD A SPOT" />
             </form>
           </section>
+          <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
         </div>
       );
     }

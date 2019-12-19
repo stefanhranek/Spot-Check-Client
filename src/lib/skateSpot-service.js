@@ -24,7 +24,16 @@ class Spot {
     }
 
     // spot.create()
-    
+    addNewSkateSpot(skateSpotInfo) {
+      const { name, type, status, indoor, description, images, location } = skateSpotInfo;
+      console.log('{ name, type, status, indoor, description, images, location }', { name, type, status, indoor, description, images, location });
+      
+    const locationObj = { type: 'Point', coordinates: location }
+
+      return this.spot
+      .post("",{ name, type, status, indoor, description, images, location: locationObj })
+      .then(({ data }) => data);
+    }
     
     // spot.removeOneById(spotId)
     

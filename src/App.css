@@ -161,6 +161,7 @@ width: 60px;
 /* MENU */
 /* MENU */
 
+
 section.topNav {
   font-weight: bolder;
   font-size: 1.5em;
@@ -180,6 +181,7 @@ section#topNav {
   height: 60px;
   text-align: center;
   align-content: center;
+  box-shadow: 0 4px 2px -3px rgb(100, 100, 100);
 }
 
 Menu {
@@ -244,8 +246,7 @@ div.Menu {
 }
 
 input.login-button {
-  font-size: 17px;
-  text-transform: uppercase;
+  font-size: 13px;
   color: #FFF;
   letter-spacing: px;
   text-align: center;
@@ -253,6 +254,13 @@ input.login-button {
   line-height: 50px;
   font-size: 20px;
   padding: 6px;
+
+  margin-top: 40px;
+  color: black;
+  font-weight: bolder;
+  border-radius: 22px;
+  width: 95%;
+  background-color: #73989A;
 }
 
 
@@ -311,6 +319,7 @@ button.marker-btn {
   justify-content: space-evenly;
   background:#73989A;
   color: white;
+  box-shadow: 0 4px 2px -3px rgb(100, 100, 100);
 }
 
 .tab {
@@ -508,10 +517,34 @@ p.account-message {
 
 .login-link {
   text-decoration: none;
+  color: white;
+  margin-left: 5px;
+}
+
+.signupLabel {
+  font-weight: bold;
+  font-size: 1.1em
+}
+
+.password-input-style {
+  width: 100vw;
+}
+
+.login-button {
+  margin: 35px 0px;
+  padding: 15px 30px;
+  color: black;
+  font-weight: bolder;
+  font-size: 1em;
+  border-radius: 22px;
+  width: 95%;
+  background-color: #73989A;
+  /* button background color is set in 'button' style near top */
 }
 
 .signup-button {
-  padding: 30px;
+  margin: 15px 0px;
+  padding: 15px 30px;
   color: black;
   font-weight: bolder;
   font-size: 1em;
@@ -563,11 +596,24 @@ input:focus {
 }
 
 /* FAVORITES LIST */
-
-.favoriteListItem {
-  color: whitesmoke;
+.favoriteListItemWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 5% 7%;
+  border: 3px outset gray;
 }
 
+h1.favoriteListItem {
+  color: whitesmoke;
+  margin-top: 8%;
+
+}
+
+.favoritesIcon {
+  height: 2.5em;
+  margin: 5%;
+}
 /* ADD A SPOT */
 
 .indoorLabel {
@@ -632,6 +678,8 @@ a {
 /* div.mapboxgl-marker {
   z-index: -2;
 } */
+
+
 
 
 /* PROFILE */
@@ -704,6 +752,12 @@ a {
 .spotsAdded {
   font-size: .9em;
   font-weight: lighter;
+}
+
+/* EDIT PROFILE */
+
+.editProfileButton {
+  color: black;
 }
 
 /* SPOT DETAILS */

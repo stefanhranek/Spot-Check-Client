@@ -4,6 +4,7 @@ import HomeTabs from '../components/HomeTabs.js';
 import Menu from '../components/Menu.js';
 import skateSpotService from './../lib/skateSpot-service';
 import { Link } from 'react-router-dom';
+import BottomNav from '../components/BottomNav.js';
 
 
 
@@ -17,7 +18,9 @@ class MapViewStateful extends React.Component {
     spotsReady: false,
     selectedPark: null,
     newPin: null,
-    skatespots: []
+    skatespots: [],
+    pinVisible: false,
+    selectedParkVisible: false
   };
 
   componentDidMount() {
@@ -37,7 +40,7 @@ class MapViewStateful extends React.Component {
 
   setSelectedPark = (selectedPark) => {
 
-    this.setState({ selectedPark })
+    this.setState({ selectedPark, selectedParkVisible: true, pinVisible: false })
   }
 
   handleMapChange =(e) => {
@@ -47,10 +50,11 @@ class MapViewStateful extends React.Component {
   }
 
   setNewPin = (location) => {
-
-    this.setState({ newPin:location })
+    const pinVisible = !this.state.pinVisible
+    this.setState({ newPin:location, pinVisible })
 
   }
+
 
   // useEffect(() => {
   //   const listener = e => {
@@ -65,9 +69,9 @@ class MapViewStateful extends React.Component {
   //   };
   // }, []);
 
-  renderSpotDetailsPopup = () => {
-
-    return <Link style={{ width: "100%", height: "100%", zIndex: 9999 }} to={`/spot-details/:id`} ><div className="addNewSpotPopUp">Check out Spot Details</div></Link>;
+  renderSpotDetailsPopup = (id) => {
+    const { _id } = this.state.selectedPark;
+    return <Link style={{ width: "100%", height: "100%", zIndex: 9999 }} to={`/spot/${_id}`} ><div className="addNewSpotPopUp">Check out Spot Details</div></Link>;
   } 
 
 
@@ -79,7 +83,7 @@ class MapViewStateful extends React.Component {
   } 
 
   render () {
-    const {latitude, longitude, width, height, zoom, spotsReady, selectedPark, skatespots, newPin } = this.state;
+    const {latitude, longitude, width, height, zoom, spotsReady, selectedPark, skatespots, newPin, pinVisible, selectedParkVisible} = this.state;
     const viewport = {latitude, longitude, width, height, zoom };
 
     return (
@@ -95,7 +99,8 @@ class MapViewStateful extends React.Component {
         }}
         onClick={this.handleMapChange}
       >
-        { newPin ? this.renderAddSpotPopup() : null }
+        {(selectedPark && selectedParkVisible) ? this.renderSpotDetailsPopup() : null}
+        { (newPin && pinVisible) ? this.renderAddSpotPopup() : null }
         {skatespots.map(park => (
           <Marker
             key={park._id}
@@ -132,7 +137,7 @@ class MapViewStateful extends React.Component {
           </Popup>
         )) : null}
 
-        {newPin ? (
+        { (newPin && pinVisible) ? (
           <Popup
             style={{ position: "absolute" }}
             longitude={newPin[0]}
@@ -145,6 +150,7 @@ class MapViewStateful extends React.Component {
           </Popup>
         ) : null}
       </ReactMapGL>
+      <BottomNav />
     </div>
   );
 }

@@ -3,9 +3,29 @@ import Menu from '../components/Menu';
 // import userService from './../lib/user-service';
 // import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
+import userService from '../lib/user-service';
 
 
 class EditProfile extends Component {
+    state = {
+        user: {}
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        const { user } = this.state;
+        userService
+          .getUserByIdAndUpdate({ user })
+          .then( () => {
+            this.props.history.goBack();
+          })
+    };
+
+    handleChange = event => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
+    };
+
     render() {
         const { user, logout, isLoggedin } = this.props;
         return (

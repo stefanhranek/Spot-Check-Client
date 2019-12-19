@@ -29,7 +29,7 @@ class Login extends Component {
 
           <form className="login-form-wrapper" onSubmit={this.handleFormSubmit}>
             <section className="login-form-section-wrapper">
-              <label>Username:</label>
+              <label className="signupLabel">Username:</label>
               <input
                 type="text"
                 name="username"
@@ -39,7 +39,7 @@ class Login extends Component {
             </section>
 
             <section className="login-form-section-wrapper">
-              <label>Password:</label>
+              <label className="signupLabel">Password:</label>
               <input
                 className="password-input-style"
                 type="password"
@@ -49,7 +49,7 @@ class Login extends Component {
               />
             </section>
 
-            <input className="login-button" type="submit" value="LOGIN" />
+            <input className="login-button" type="submit" value="Login" />
           </form>
 
       </div>

@@ -29,6 +29,10 @@ class Profile extends Component {
                         <h1 className="username"> @ {user.username} </h1>
                         <h3 className="currentLocation"> <img className="profilePin" src="./../../pin.svg" alt="location pin"></img> {user.city} </h3>
                         <h3 className="spotsAdded"> <b>{user.mySpots.length}</b> SPOTS ADDED </h3>
+                        <Link to="/edit-profile">
+                            
+                            <button className="editProfileButton">Edit Profile</button>
+                        </Link>
                     </div>
                 </section>
 

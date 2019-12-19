@@ -27,7 +27,10 @@ export default class FavoritesList extends Component {
                     indoor={element.indoor} 
                     description={element.description} 
                     >
-                    <h1 className="favoriteListItem">{element.name}</h1>
+                    <section className="favoriteListItemWrapper">
+                        <img className="favoritesIcon" src="./../../skateSpotIcon.png" alt="icon"/>
+                        <h1 className="favoriteListItem">{element.name}</h1>
+                    </section>
                 </Link>
                 </div>
         }) 

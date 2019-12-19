@@ -59,6 +59,7 @@ class SpotDetails extends Component {
                                     <p>{favorites.description}</p>
                             </section>
                             </div>
+                        <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
                         </div>
                     </div>
                 )
