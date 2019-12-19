@@ -4,7 +4,7 @@ import axios from 'axios';
 class User {
     constructor() {
         this.user = axios.create({
-          baseURL: process.env.REACT_APP_API_URL + '/user',
+          baseURL: process.env.REACT_APP_API_URL,
           withCredentials: true,
         });
       }
@@ -27,7 +27,7 @@ class User {
         getUserByIdAndUpdate(user) {
           const { username, email, password, city } = user
           return this.user
-                    .put({ username, password, city, email })
+                    .put('/user',{ username, password, city, email })
                     .then(({ data }) => data);
         }
 
