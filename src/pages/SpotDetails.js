@@ -39,28 +39,35 @@ class SpotDetails extends Component {
                 return (
                     <div>
                         <Menu />
-                        <h1>SPOT DETAILS</h1>
+                        <h1 className="detailsNameHeader">{favorites.name}</h1>
                         <div className="spotDetailsBanner"></div>
                         <div className="spotDetailsContainer">
                             <div className="spotNameAndLikeButton">
-                                <h3>{favorites.name}</h3>
-                                <button>insert heart button</button>
+                            
+                                <button className="addToFavorites">Add to favorites</button>
                             </div>
                             <div>
-                                <p>INFO</p>
+                                <h3>INFORMATION</h3>
                                 <hr/>
                             <section className="infoDetails">
-                                <h3>TYPE</h3>
-                                    <p>{favorites.type}</p>
-                                <h3>STATUS</h3>
-                                    <p>{favorites.status}</p>
-                                <h3>INDOOR</h3>
-                                    <p>{favorites.indoor}</p>
+                                <section className="singleDetailWrap">
+                                    <h3>TYPE:</h3>
+                                    <p className="spotDetailValues">{favorites.type}</p>
+                                </section>
+                                <section className="singleDetailWrap">
+                                    <h3>STATUS:</h3>
+                                    <p className="spotDetailValues">{favorites.status}</p>
+                                </section>
+                                <section className="singleDetailWrap">
+                                    <h3>INDOOR?:</h3>
+                                    <p className="spotDetailValues">{favorites.indoor}</p>
+                                </section>
+                                
                                 <h3>DESCRIPTION</h3>
-                                    <p>{favorites.description}</p>
+                                    <p className="spotDetailValues">{favorites.description}</p>
                             </section>
                             </div>
-                        <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
+                        <button onSubmit={this.handleButtonSubmit} className="goBackButtonDetails">Go Back</button>
                         </div>
                         <BottomNav />
                     </div>

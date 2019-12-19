@@ -674,7 +674,8 @@ canvas {
   padding: 10px;
   border: 2px solid white;
   border-radius: 10px;
-  margin: 75vh 20px;
+  margin: 65vh 20px;
+  text-align: none;
 }
 
 a {
@@ -846,7 +847,7 @@ margin-top: 10%;
 }
 
 .spotDetailsContainer {
-  margin: 10%;
+  margin: 5% 10% 10% 10%;
 }
 
 /* BOTTOM NAV BAR */
@@ -873,3 +874,39 @@ margin-top: 10%;
 
 }
 
+.addToFavorites {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2px; 
+  text-align: center;
+  vertical-align: middle;
+  background: black;
+  padding: 10px;
+}
+
+.detailsNameHeader {
+  margin-bottom: 10px
+}
+
+.singleDetailWrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.spotDetailValues {
+  margin-left: 20px;
+  color: white;
+}
+
+.goBackButtonDetails {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #FFF;
+  letter-spacing: 2px; 
+  text-align: center;
+  vertical-align: middle;
+  background: black;
+  padding: 10px;
+  margin-top: 30px;
+}

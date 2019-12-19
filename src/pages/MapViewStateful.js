@@ -71,7 +71,7 @@ class MapViewStateful extends React.Component {
 
   renderSpotDetailsPopup = (id) => {
     const { _id } = this.state.selectedPark;
-    return <Link style={{ width: "100%", height: "100%", zIndex: 9999 }} to={`/spot/${_id}`} ><div className="addNewSpotPopUp">Check out Spot Details</div></Link>;
+    return <Link style={{  width: "100%", height: "100%", zIndex: 9999 }} to={`/spot/${_id}`} ><div className="addNewSpotPopUp">Check out Spot Details</div></Link>;
   } 
 
 
@@ -79,7 +79,7 @@ class MapViewStateful extends React.Component {
 
     const [ lng, lat ] = this.state.newPin;
 
-    return <Link style={{ width: "50%", height: "50%", zIndex: 9999 }} to={`/add-spot?lng=${lng}&lat=${lat}`} ><div className="addNewSpotPopUp">Add new spot?</div></Link>;
+    return <Link style={{ width: "100%", height: "100%", zIndex: 9999 }} to={`/add-spot?lng=${lng}&lat=${lat}`} ><div className="addNewSpotPopUp">Add new spot?</div></Link>;
   } 
 
   render () {

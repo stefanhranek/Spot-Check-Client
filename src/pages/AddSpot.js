@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from '../lib/AuthProvider';
 import Menu from '../components/Menu';
 import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 import skateSpotService from './../lib/skateSpot-service.js'
 import BottomNav from '../components/BottomNav';
 
@@ -145,7 +146,9 @@ class AddSpot extends Component {
               <input type="submit" value="ADD A SPOT" />
             </form>
           </section>
-          <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
+          <Link to="/map">
+            <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
+          </Link>
           <BottomNav />
         </div>
       );
