@@ -9,23 +9,15 @@ import BottomNav from '../components/BottomNav';
 
 class SpotDetails extends Component {
     state = { 
-            // name: '', 
-            // type: '', 
-            // status: '',
-            // indoor: '',
-            // description: '',
             favorites: []
             };
 
-            
             componentDidMount() {
                 const { id } = this.props.match.params;
-                console.log('this.props', this.props);
 
                 skateSpotService
                 .getOneSkateSpotById(id)
                 .then( (response) => {
-                    console.log('HERE IS THE skate spot response',response);
                     this.setState({favorites: response})
                 })
                 .catch( (err) => console.log(err));
@@ -48,7 +40,6 @@ class SpotDetails extends Component {
 
             render() {
                 const { favorites } = this.state;
-                console.log('favorites',favorites);
 
                 return (
                     <div className="SpotDetailsPage">
@@ -57,9 +48,10 @@ class SpotDetails extends Component {
                         <div className="spotDetailsBanner"></div>
                         <div className="spotDetailsContainer">
                             <div className="spotNameAndLikeButton">
-                                    <button 
-                                        onClick={this.addToFavorites}
-                                        className="addToFavorites">Add to favorites</button>
+                                <button 
+                                    onClick={this.addToFavorites}
+                                    className="addToFavorites">Add to favorites
+                                </button>
                             </div>
                             <div>
                                 <h3>INFORMATION</h3>
@@ -83,9 +75,9 @@ class SpotDetails extends Component {
                             </section>
                             </div>
                                 <Link to="/map">
-                                    <button onSubmit={this.handleButtonSubmit} className="goBackButtonDetails">Go Back</button>
+                                    <button className="goBackButtonDetails">Go Back</button>
                                 </Link>
-                        </div>
+                            </div>
                         <BottomNav />
                     </div>
                 )

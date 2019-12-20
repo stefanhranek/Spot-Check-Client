@@ -26,7 +26,6 @@ class Spot {
     // spot.create()
     addNewSkateSpot(skateSpotInfo) {
       const { name, type, status, indoor, description, images, location } = skateSpotInfo;
-      console.log('{ name, type, status, indoor, description, images, location }', { name, type, status, indoor, description, images, location });
       
     const locationObj = { type: 'Point', coordinates: location }
 
@@ -35,17 +34,11 @@ class Spot {
       .then(({ data }) => data);
     }
     
-    // spot.removeOneById(spotId)
-    
-    
+    // spot.removeOneById(spotId) - backlog
     // spot.updateOneById(spotId) - backlog
-    
-    
-    // spot.getAllByCity(city) - backlog service
+    // spot.getAllByCity(city) - backlog 
   }
 
-
-  
   const skateSpotService = new Spot();
   
   export default skateSpotService;

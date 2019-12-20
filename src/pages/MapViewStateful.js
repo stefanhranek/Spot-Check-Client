@@ -28,7 +28,6 @@ class MapViewStateful extends React.Component {
     skateSpotService
       .getAllSkateSpots()
       .then((skatespots)=> {
-        console.log('skatespots from the API', skatespots);
         this.setState({ skatespots })
         
       })
@@ -44,7 +43,6 @@ class MapViewStateful extends React.Component {
   }
 
   handleMapChange =(e) => {
-    console.log('LNG LAT',e.lngLat);
     
     this.setNewPin(e.lngLat);
   }

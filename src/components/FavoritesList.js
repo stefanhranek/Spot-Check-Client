@@ -9,7 +9,6 @@ export default class FavoritesList extends Component {
         userService
         .getMyFavorites()
         .then( (data) => {
-            console.log('HERE IS THE DATA',data);
             this.setState({favoritesList: data.favorites})
         })
         .catch( (err) => console.log(err))
@@ -30,7 +29,7 @@ export default class FavoritesList extends Component {
         const { favoritesList } = this.state;
         const allMyFavorites = favoritesList.map( element => {
             return <div key={element._id}>
-                <Link to={`/spot/${element._id}`} 
+                <div 
                     name={element.name}
                     type={element.type}
                     status={element.status} 
@@ -38,16 +37,15 @@ export default class FavoritesList extends Component {
                     description={element.description} 
                     >
                     <section className="favoriteListItemWrapper">
-                        <img className="favoritesIcon" src="./../../skateSpotIcon.png" alt="icon"/>
-                        <h1 className="favoriteListItem">{element.name}</h1>
-                    </section>
-                </Link>
-                        <button onClick={()=>this.removeFavorite(element._id)} >
+                        <Link to={`/spot/${element._id}`} className="flexRowThis">
                             <img className="favoritesIcon" src="./../../skateSpotIcon.png" alt="icon"/>
-                        </button>
+                            <h1 className="favoriteListItem">{element.name}</h1>
+                        </Link>
+                            <img onClick={()=>this.removeFavorite(element._id)} className="favoritesIconButton" src="./../../remove.svg" alt="icon"/>
+                    </section>
+                </div>
                 </div>
         }) 
-        console.log('Here are all of the FAVORITES',allMyFavorites)
         
         return (
             <div>

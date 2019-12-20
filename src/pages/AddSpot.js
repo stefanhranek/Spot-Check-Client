@@ -20,9 +20,6 @@ class AddSpot extends Component {
      componentDidMount() {
       const values = queryString.parse(this.props.location.search)
       const { lng, lat } = values;
-      console.log(values.filter) // "top"
-      console.log(values.origin) // "im"
-      console.log('PARSED URL VALUES FOR LOCATION', values);
       this.setState({location:[Number(lng),Number(lat)]});
     }
 
@@ -48,14 +45,12 @@ class AddSpot extends Component {
     };
 
     handleCheckboxChange = event => {
-        const { name, value, checked } = event.target;
-        console.log('egswegdsgsgsdgsdgs', { name, value, checked });
-        
+        const { value } = event.target;
         this.setState({ indoor:value  });
       };
   
     render() {
-      const { name, type, status, indoor, description, images, location } = this.state;
+      const { name, type, status, description } = this.state;
       return (
         <div>
           <Menu />
@@ -126,23 +121,6 @@ class AddSpot extends Component {
                 placeholder="Legendary spot ..."
               />
 
-
-              {/* <label>Images</label>
-              <input
-                type="text"
-                name="images"
-                value={images}
-                onChange={this.handleChange}
-              /> */}
-
-              {/* <label>Location</label>
-              <input
-                type="text"
-                name="location"
-                value={location}
-                onChange={this.handleChange}
-              /> */}
-    
               <input type="submit" value="ADD A SPOT" />
             </form>
           </section>

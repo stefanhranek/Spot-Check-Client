@@ -599,19 +599,24 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 5% 7%;
+  margin: 5%;
   border: 3px outset gray;
+  border-radius: 10px;
 }
 
 h1.favoriteListItem {
   color: whitesmoke;
   margin-top: 8%;
+  margin-left: 2%;
+  width: 60vw;
+  text-align: left;
 
 }
 
 .favoritesIcon {
   height: 2.5em;
-  margin: 5%;
+  margin: 7% 5%;
+  text-align: left;
 }
 /* ADD A SPOT */
 
@@ -930,4 +935,21 @@ margin-top: 10%;
 
 .SpotDetailsPage {
   height: 110vh;
+}
+
+.flexRowThis {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 2%;
+}
+
+.favoritesIconButton {
+  color: black;
+  letter-spacing: 2px; 
+  text-align: center;
+  vertical-align: middle;
+  background: black;
+  padding: 10px;
+
 }

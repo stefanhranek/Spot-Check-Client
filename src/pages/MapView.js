@@ -36,8 +36,6 @@ export default function MapView() {
   }, []);
 
 
-  console.log('selectedPark', selectedPark);
-  console.log('setSelectedPark', setSelectedPark);
 
   
 

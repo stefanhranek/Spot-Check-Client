@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withAuth } from '../lib/AuthProvider';
-
 
 export default function HomeTabs() {
     return (
@@ -10,7 +8,7 @@ export default function HomeTabs() {
                 <Link to={'/map'}> MAP</Link>
             </section>
             <section className="tab">
-                <Link to={'/favorites'}> FAVORITES</Link>
+                <Link to={'/favorites'}> FAVORITES </Link>
             </section>
         </div>
     )
