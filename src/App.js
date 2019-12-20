@@ -5,7 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import MapView from './pages/MapView';
+
 import MapViewStateful from './pages/MapViewStateful';
 
 import AddSpot from './pages/AddSpot';
