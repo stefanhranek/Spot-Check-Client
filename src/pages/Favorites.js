@@ -13,10 +13,12 @@ import BottomNav from '../components/BottomNav';
 export default function Favorites(props) {
     return (
         <div className="listContainer">
+          <div className="topNavFixed">
             <Menu />
             <HomeTabs />
+          </div>
 
-            <section>
+            <section className="favoriteListWrapper">
               <FavoritesList />
             </section>
             <BottomNav />

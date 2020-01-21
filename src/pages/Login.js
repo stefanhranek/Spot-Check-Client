@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 
 class Login extends Component {
@@ -21,36 +22,44 @@ class Login extends Component {
     return (
       <div className="login-page-wrapper">
 
-          {/* <Menu />  */}
-          {/* Remove later */}
+            <div className="loginPageContainer">
 
-          <h1 className="login-header">Welcome<br/>Back.</h1>
+                <section className="loginImagesContainer">
+                  <img className ="loginImage" src="./../../spotCheckNewYellow.png" alt=""/>
+                </section>
+        
+          <div className="loginFormContainer">
+            <form className="login-form-wrapper" onSubmit={this.handleFormSubmit}>
+              <section className="login-form-section-wrapper">
+                <label className="signupLabel">Username:</label>
+                <input
+                  className="password-input-style"
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={this.handleChange}
+                />
+              </section>
 
+              <section className="login-form-section-wrapper">
+                <label className="signupLabel">Password:</label>
+                <input
+                  className="password-input-style"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                />
+              </section>
 
-          <form className="login-form-wrapper" onSubmit={this.handleFormSubmit}>
-            <section className="login-form-section-wrapper">
-              <label className="signupLabel">Username:</label>
-              <input
-                type="text"
-                name="username"
-                value={username}
-                onChange={this.handleChange}
-              />
-            </section>
-
-            <section className="login-form-section-wrapper">
-              <label className="signupLabel">Password:</label>
-              <input
-                className="password-input-style"
-                type="password"
-                name="password"
-                value={password}
-                onChange={this.handleChange}
-              />
-            </section>
-
-            <input className="login-button" type="submit" value="Login" />
-          </form>
+              <input className="login-button" type="submit" value="Login" />
+            <p className="alternativePage">
+              Don't have an account yet?
+              <Link className="login-link" to={'/signup'}> Signup</Link>
+            </p>
+            </form>
+          </div>
+            </div>
 
       </div>
     );

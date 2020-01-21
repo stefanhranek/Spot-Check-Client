@@ -11,7 +11,14 @@ class User {
 
 
     //   user.profile()
-
+      getUser() {
+        return this.user
+          .get(process.env.REACT_APP_API_URL + "/user/profile")
+          .then(user => {
+            return user.data;
+      })
+      .catch(err => console.log(err));
+      }
 
     //   user.favorites()
       getMyFavorites() {
@@ -23,11 +30,18 @@ class User {
         } 
 
         //   user.edit()
-        getUserByIdAndUpdate(user) {
-          const { username, email, password, city } = user
+        getUserByIdAndUpdate(newUser) {
+          // const { username, email, password, city } = user
           return this.user
-                    .put('/',{ username, password, city, email })
-                    .then(({ data }) => data);
+                    .put('/user/edit', newUser)
+                    // .put('/',{ username, password, city, email })
+                    // .then(({ data }) => data);
+                    .then(res => {
+                      console.log('DATA', res);
+                      
+                      return res.data;
+                    });
+
         }
 
 

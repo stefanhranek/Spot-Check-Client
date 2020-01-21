@@ -44,9 +44,9 @@ class SpotDetails extends Component {
                 return (
                     <div className="SpotDetailsPage">
                         <Menu />
+                        <div className="spotDetailsContainer">
                         <h1 className="detailsNameHeader">{favorites.name}</h1>
                         <div className="spotDetailsBanner"></div>
-                        <div className="spotDetailsContainer">
                             <div className="spotNameAndLikeButton">
                                 <button 
                                     onClick={this.addToFavorites}
@@ -54,30 +54,33 @@ class SpotDetails extends Component {
                                 </button>
                             </div>
                             <div>
-                                <h3>INFORMATION</h3>
-                                <hr/>
+                                <h3 className="descriptionTitle">INFORMATION</h3>
+                                
                             <section className="infoDetails">
                                 <section className="singleDetailWrap">
-                                    <h3>TYPE:</h3>
+                                    <h3 className="spotDetailLabel">TYPE:</h3>
                                     <p className="spotDetailValues">{favorites.type}</p>
                                 </section>
                                 <section className="singleDetailWrap">
-                                    <h3>STATUS:</h3>
+                                    <h3 className="spotDetailLabel">STATUS:</h3>
                                     <p className="spotDetailValues">{favorites.status}</p>
                                 </section>
                                 <section className="singleDetailWrap">
-                                    <h3>INDOOR?:</h3>
+                                    <h3 className="spotDetailLabel">INDOOR?:</h3>
                                     <p className="spotDetailValues">{favorites.indoor}</p>
                                 </section>
                                 
                                 <h3 className="descriptionTitle">DESCRIPTION</h3>
-                                    <p className="spotDetailValues">{favorites.description}</p>
+                                    <p className="spotDescriptionValue">{favorites.description}</p>
                             </section>
                             </div>
                                 <Link to="/map">
                                     <button className="goBackButtonDetails">Go Back</button>
                                 </Link>
                             </div>
+
+                            <h1 className="floatingTextDetails">Images coming soon!</h1>
+
                         <BottomNav />
                     </div>
                 )

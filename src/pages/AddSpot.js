@@ -52,12 +52,12 @@ class AddSpot extends Component {
     render() {
       const { name, type, status, description } = this.state;
       return (
-        <div>
+        <div className="addSpotWholePage">
           <Menu />
           <section className="addSpotContainer">
           
             {/* <h1>Add New Skate Spot</h1> */}
-            <form onSubmit={this.handleFormSubmit}>
+            <form classname="addSpotFormContainer" onSubmit={this.handleFormSubmit}>
               <label className="addSpotLabels">NAME YOUR SPOT</label>
               <input
                 className="addSpotInput"
@@ -91,28 +91,28 @@ class AddSpot extends Component {
               <label className="addSpotLabels">INDOOR?</label>
                   <div className="indoorLabel">
                     <input
-                    className="addSpotInput"
+                    className="radioInput"
                     id="indoor"
                     type="radio"
                     name="indoor"
                     value="indoor"
                     onChange={this.handleCheckboxChange}
                     />
-                    <label htmlFor="indoor">Indoor</label>
+                    <label className="indoor" htmlFor="indoor">Indoor</label>
                     <input
-                    className="addSpotInput"
+                    className="radioInput"
                     id="outdoor"
                     type="radio"
                     name="indoor"
                     value="outdoor"
                     onChange={this.handleCheckboxChange}
                     />
-                    <label htmlFor="outdoor">Outdoor</label>
+                    <label className="outdoor" htmlFor="outdoor">Outdoor</label>
                   </div>
 
 
               <label className="addSpotLabels">DESCRIPTION</label>
-              <textarea cols="54" rows="6"
+              <textarea cols="56" rows="6"
                 className="addSpotInput"
                 type="text"
                 name="description"
@@ -121,12 +121,15 @@ class AddSpot extends Component {
                 placeholder="Legendary spot ..."
               />
 
-              <input type="submit" value="ADD A SPOT" />
+              <input className="addSpotButton" type="submit" value="ADD A SPOT" />
             </form>
-          </section>
           <Link to="/map">
             <button onSubmit={this.handleButtonSubmit} className="goBackButton">Go Back</button>
           </Link>
+          </section>
+
+          <h1 className="floatingText1">Keep the community up to date.</h1>
+
           <BottomNav />
         </div>
       );

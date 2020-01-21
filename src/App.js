@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import './App.css';
 
 import Home from './pages/Home';
@@ -22,10 +22,10 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
+          <AnonRoute exact path="/" component={Login}/>
           <AnonRoute exact path="/home" component={Home} />
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
-
           <PrivateRoute exact path="/map" component={MapViewStateful} />
           <PrivateRoute exact path="/favorites" component={Favorites} />
           <PrivateRoute exact path="/add-spot" component={AddSpot} />

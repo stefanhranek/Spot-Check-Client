@@ -20,49 +20,57 @@ class Signup extends Component {
   render() {
     const { username, password, email } = this.state;
     return (
-      <div className="signup-page-wrapper">
-        {/* <Menu /> */}
-        <h1 className="signup-header">Create<br/>Account.</h1>
-        <form className="signup-form-wrapper" onSubmit={this.handleFormSubmit}>
-          <section className="signup-form-section-wrapper">
-            <label className="signupLabel">Username:</label>
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={this.handleChange}
-            />
+      <div className="login-page-wrapper">
+        <div className="loginPageContainer">
+          {/* <h1 className="signup-header">Create<br/>Account.</h1> */}
+          <section className="loginImagesContainer">
+            <img className ="loginImage" src="./../../spotCheckNewYellow.png" alt=""/>
           </section>
 
-          <section className="signup-form-section-wrapper">
-            <label className="signupLabel">Password:</label>
-            <input
-              className="password-input-style"
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.handleChange}
-            />
-          </section>
+          <div className="loginFormContainer">
+            <form className="signup-form-wrapper" onSubmit={this.handleFormSubmit}>
+              <section className="signup-form-section-wrapper">
+                <label className="signupLabel">Username:</label>
+                <input
+                  className="password-input-style"
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={this.handleChange}
+                />
+              </section>
 
-          <section className="signup-form-section-wrapper">
-            <label className="signupLabel">Email:</label>
-            <input
-              className="password-input-style"
-              type="email"
-              name="email"
-              value={email}
-              onChange={this.handleChange}
-            />
-          </section>
+              <section className="signup-form-section-wrapper">
+                <label className="signupLabel">Password:</label>
+                <input
+                  className="password-input-style"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                />
+              </section>
 
-          <input className="signup-button" type="submit" value="Signup" />
-        </form>
+              <section className="signup-form-section-wrapper">
+                <label className="signupLabel">Email:</label>
+                <input
+                  className="password-input-style"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                />
+              </section>
 
-        <p>
-          Already have account?
-          <Link className="login-link" to={'/login'}> Login</Link>
-        </p>
+              <input className="login-button" type="submit" value="Signup" />
+            <p className="alternativePage">
+              Already have account?
+              <Link className="login-link" to={'/login'}> Login</Link>
+            </p>
+            </form>
+
+            </div>
+        </div>
       </div>
     );
   }

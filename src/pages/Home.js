@@ -18,7 +18,7 @@ class Home extends Component {
               <section className="homeImagesContainer">
                 <img className ="homeImage" src="./../../spotCheckLogo.png" alt=""/>
                 {/* <div className ="fadedHomePicture"></div> */}
-                <img className ="homeImage" src="./../../spotCheckHome.png" alt=""/>
+                <img className ="homeImage1" src="./../../spotCheckHome.png" alt=""/>
               </section>
               <section className="container">
                     <Link to="/login">

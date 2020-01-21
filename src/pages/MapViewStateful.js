@@ -13,7 +13,7 @@ class MapViewStateful extends React.Component {
     latitude: 41.3851,
     longitude: 2.1734,  /* set to Barcelona's location */
     width: "100vw",
-    height: "75vh",
+    height: "93.9vh",
     zoom: 10,
     spotsReady: false,
     selectedPark: null,
@@ -90,8 +90,9 @@ class MapViewStateful extends React.Component {
       <HomeTabs />
       <ReactMapGL
         { ...viewport }
+        className="mapBox"
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        mapStyle="mapbox://styles/stefanhranek/ck47tdbs43joe1clhber86t17"
+        mapStyle="mapbox://styles/mapbox/dark-v10"
         onViewportChange={(viewport) => {
           this.setViewport(viewport);
         }}

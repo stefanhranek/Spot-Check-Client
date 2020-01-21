@@ -1,3 +1,7 @@
+textarea {
+  width: 95%;
+}
+
 ul {
   padding: 0;
 }
@@ -9,7 +13,7 @@ body {
 }
 
 * {
-  color: #73989A;
+  color: rgb(255, 187, 0);
 }
 
 html {
@@ -65,6 +69,11 @@ html {
 /**************/
 /**************/
 /**************/
+
+.topNavFixed {
+  position: fixed;
+  width: 100%;
+}
 
 body {
   width: 100%;
@@ -124,11 +133,21 @@ h2 {
 /* HOME */
 /* HOME */
 
+
 .homePageContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 8%;
+}
+
+@media only screen and (min-width: 768px) {
+  .homePageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8vh;
+  }
 }
 
 .homeButtonsContainer {
@@ -138,20 +157,17 @@ h2 {
 }
 
 .homeButtons {
-margin: 0 10vw;
-border-radius: 8px;
-height: 40px;
-width: 60px;
+  margin: 0 10vw;
+  border-radius: 8px;
+  height: 40px;
+  width: 60px;
 }
 
 .homeImagesContainer {
   width: 100%;
 }
 
-.homeImage {
-  width: 100%;
-  margin: 5% 0 5% 0;
-}
+
 /* .fadedHomePicture{
   height: 40vh;
   width: auto;
@@ -183,11 +199,12 @@ section#topNav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background: rgb(56, 51, 51);
+  background:#343332;
   height: 60px;
   text-align: center;
   align-content: center;
   box-shadow: 0 4px 2px -5px rgb(100, 100, 100);
+  width: 100%;
 }
 
 Menu {
@@ -201,6 +218,19 @@ div.Menu {
 
 .spotCheckHeader {
   color: rgb(238, 228, 228);
+  font-family: roboto;
+  font-size: 1.5em;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+  text-align: center;
+  margin: auto;
+}
+
+.topRightNav {
+  display: none;
 }
 
 .topNav {
@@ -253,16 +283,38 @@ input.login-button {
   line-height: 50px;
   font-size: 20px;
   padding: 6px;
-
-  margin-top: 40px;
+  transition: all 0.3s ease; 
+  margin-top: 20px;
   color: black;
   font-weight: bolder;
   border-radius: 22px;
   width: 95%;
-  background-color: #73989A;
+  background-color: rgb(255, 187, 0);
 }
 
+input.login-button:hover {
+  font-size: 19px;
+  background-color: rgb(255, 174, 0);
+}
 
+.loginImage {
+  width: 80%;
+  margin: auto;
+  padding: 1% 0 3% 0;
+}
+
+.loginImagesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5%;
+}
+
+.alternativePage {
+  padding: 0;
+  margin: 0;
+}
 
 /* BUTTON STYLE  */
 
@@ -303,6 +355,11 @@ button.marker-btn {
   cursor:pointer;
   overflow: hidden;
   outline:none;
+  transition: all 0.17s ease;
+}
+
+button.marker-btn:hover {
+  transform: scale(1.3);
 }
 
 /*  HOMETABS COMPONENT  */
@@ -316,7 +373,7 @@ button.marker-btn {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background:#73989A;
+  background:rgb(255, 187, 0);
   color: white;
   box-shadow: 0 4px 2px -3px rgb(100, 100, 100);
 }
@@ -430,7 +487,7 @@ p.form-label-password-bottom {
   font-size: 1em;
   border-radius: 22px;
   width: 95%;
-  background-color: #73989A;
+  background-color: rgb(255, 187, 0);
   /* button background color is set in 'button' style near top */
 }
 
@@ -518,6 +575,12 @@ p.account-message {
   text-decoration: none;
   color: white;
   margin-left: 5px;
+  transition: all 0.3s ease;
+}
+
+.login-link:hover {
+  transform: scale(1.2);
+  color: rgb(216, 168, 153);
 }
 
 .signupLabel {
@@ -537,7 +600,7 @@ p.account-message {
   font-size: 1em;
   border-radius: 22px;
   width: 95%;
-  background-color: #73989A;
+  background-color: rgb(255, 187, 0);
   /* button background color is set in 'button' style near top */
 }
 
@@ -549,7 +612,7 @@ p.account-message {
   font-size: 1em;
   border-radius: 22px;
   width: 95%;
-  background-color: #73989A;
+  background-color: rgb(255, 187, 0);
   /* button background color is set in 'button' style near top */
 }
 
@@ -595,6 +658,10 @@ input:focus {
 }
 
 /* FAVORITES LIST */
+.favoriteListWrapper {
+  margin-top: 140px;
+}
+
 .favoriteListItemWrapper{
   display: flex;
   flex-direction: row;
@@ -630,7 +697,7 @@ h1.favoriteListItem {
 .addSpotLabels {
   margin: 50px 0px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #73989A;
+  border-bottom: 1px solid rgb(255, 187, 0);
   width: 100vw;
   color: white;
 }
@@ -649,7 +716,7 @@ h1.favoriteListItem {
 .addSpotInput {
   margin: 20px 0px;
   background: inherit;
-  border: 1px groove #73989A;
+  border: 1px groove rgb(255, 187, 0);
   padding: 8px;
   font-size: 11px;
   letter-spacing: 2px;
@@ -689,7 +756,6 @@ a {
 
 
 
-
 /* PROFILE */
 /* PROFILE */
 /* PROFILE */
@@ -718,7 +784,7 @@ a {
 
 .bio {
   height: 80vh;
-  background: rgb(17, 24, 24);
+  background: rgb(23, 24, 17);
   border-top: 3px solid;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
@@ -734,6 +800,16 @@ div.bioFloatDown {
   border-top: 3px solid;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
+}
+
+h1, h1.username, h3.currentLocation, h3.spotsAdded {
+  color: white;
+  font-family: roboto;
+}
+
+p.comingSoon {
+  color: rgb(255, 187, 0);
+  font-family: roboto;
 }
 
 .media {
@@ -814,7 +890,7 @@ div.bioFloatDown {
   font-size: 1em;
   border-radius: 22px;
   width: 95%;
-  background-color: #73989A;
+  background-color: rgb(255, 187, 0);
 }
 
 .editProfileButton {
@@ -827,6 +903,7 @@ div.bioFloatDown {
   background: black;
   margin: 0 20px;
   text-align: center;
+  font-family: roboto;
 
 }
 
@@ -858,7 +935,7 @@ margin-top: 10%;
 /* BOTTOM NAV BAR */
 
 .navbar {
-  background-color: #73989A;
+  background-color: rgb(255, 187, 0);
   height: 62px;
   display: flex;
   flex-direction: row;
@@ -867,6 +944,7 @@ margin-top: 10%;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .navIcon {
@@ -876,14 +954,20 @@ margin-top: 10%;
 }
 
 .addToFavorites {
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #FFF;
-  letter-spacing: 2px; 
-  text-align: center;
-  vertical-align: middle;
+  color: white;
+  height: 35px;
+  width: 135px;
+  border: 2px solid #FFF;
+  transition: all 0.3s ease;
+  border-radius: 5px;
   background: black;
-  padding: 10px;
+  margin: 0 20px;
+  text-align: center;
+  font-family: roboto;
+}
+
+.addToFavorites:hover {
+  transform: scale(1.2);
 }
 
 .detailsNameHeader {
@@ -901,15 +985,20 @@ margin-top: 10%;
 }
 
 .goBackButtonDetails {
-  font-size: 13px;
-  text-transform: uppercase;
-  color: #FFF;
-  letter-spacing: 2px; 
-  text-align: center;
-  vertical-align: middle;
+  color: white;
+  height: 35px;
+  width: 100px;
+  border: 2px solid #FFF;
+  transition: all 0.3s ease;
+  border-radius: 5px;
   background: black;
-  padding: 10px;
-  margin-top: 30px;
+  margin: 10px 20px;
+  text-align: center;
+  font-family: roboto;
+}
+
+.goBackButtonDetails:hover {
+  transform: scale(1.2);
 }
 
 .descriptionTitle {
@@ -952,4 +1041,768 @@ margin-top: 10%;
   background: black;
   padding: 10px;
 
+}
+
+.floatingText1 {
+  visibility: hidden;
+}
+
+.topRightNav {
+  visibility: hidden;
+}
+
+
+
+/*  -- RESPONSIVENESS FOR DESKTOP -- */   /*  -- RESPONSIVENESS FOR DESKTOP -- */
+/*  -- RESPONSIVENESS FOR DESKTOP -- */   /*  -- RESPONSIVENESS FOR DESKTOP -- */
+/*  -- RESPONSIVENESS FOR DESKTOP -- */   /*  -- RESPONSIVENESS FOR DESKTOP -- */
+/*  -- RESPONSIVENESS FOR DESKTOP -- */   /*  -- RESPONSIVENESS FOR DESKTOP -- */   
+/*  -- RESPONSIVENESS FOR DESKTOP -- */   /*  -- RESPONSIVENESS FOR DESKTOP -- */
+/*  -- RESPONSIVENESS FOR DESKTOP -- */   /*  -- RESPONSIVENESS FOR DESKTOP -- */
+
+@media only screen and (min-width: 768px) {
+
+  .homeImagesContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  .homeImage1 {
+    width: 100%;
+    max-width: 400px;
+    margin: 5% 0 5% 0;
+  }
+  
+  .homeImage {
+    width: 100%;
+    max-width: 400px;
+    margin: 5% 0 5% 0;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+  
+    /* Home Page */
+    .homeImage {
+      width: 50%;
+      margin: auto;
+      padding: 1% 0 3% 0;
+    }
+  
+    .homeImage1 {
+    display: none;
+    }
+  
+    .homePageContainer {
+      background: no-repeat url('https://soloskatemag.com/upload/Storage/_galleryThumbnailH/Bjoern-Klotz-Fs-Carve.jpg');
+      background-size: 100%;
+      height: 100vh;
+    }
+  
+    /* Login Page */
+
+    .loginImage {
+      width: 25%;
+      margin: auto;
+      padding: 1% 0 3% 0;
+    }
+
+    .loginImagesContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 5%;
+    }
+
+    .loginPageContainer {
+      background: no-repeat url('https://soloskatemag.com/upload/Storage/_galleryThumbnailH/Bjoern-Klotz-Fs-Carve.jpg');
+      background-size: 100%;
+      height: 100%;
+    }
+
+
+    .login-page-wrapper {
+      background: no-repeat url('https://soloskatemag.com/upload/Storage/_galleryThumbnailH/Bjoern-Klotz-Fs-Carve.jpg');
+      background-size: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Open Sans';
+      text-align: left;
+      margin: 0;
+      justify-content: space-between;
+      align-content: space-around;
+    }
+
+    .login-form-section-wrapper {
+      margin: 0 auto;
+      height: 20px
+    }
+
+    .login-form-section-wrapper input {
+      border: 0;
+      outline: 0;
+      border-bottom: 4px solid blue;
+      color: white;
+      background: black;
+      width: 85%;
+      height: 30px;
+      caret-color: red;
+  }
+
+    .loginFormContainer {
+      height: auto;
+      width: 30%;
+      margin: auto;
+    }
+
+    .login-form-wrapper {
+      background: rgba(53, 53, 53, 0.5);
+      border-radius: 12px;
+    }
+
+    .form-label {
+      font-size: 1em;
+      color: grey;
+      letter-spacing: 1.5px;
+    }
+    
+    label.form-label {
+      letter-spacing: 5px;
+    }
+    
+    input.password-input-style {
+      border: 0;
+      outline: 0;
+      border-bottom: 4px solid #ffbb00;
+      color: white;
+      background: rgba(0, 0, 0, 0.411);
+      width: 100%;
+      height: 30px;
+      caret-color: red;
+      padding-top: 5px;
+      padding-left: 5px;
+      font-size: 1em;
+      letter-spacing: 4px;
+      margin: 0 auto;
+    }
+
+    .login-form-section-wrapper {
+      margin: 20px
+    }
+
+    input.login-button {
+    margin: 15px 10px 15px 10px;
+    padding: 0;
+    color: black;
+    font-weight: bolder;
+    font-size: 1em;
+    border-radius: 22px;
+    width: 95%;
+    background-color: #ffbb00;
+    }
+
+    .alternativePage {
+      margin: 0 auto;
+      padding-bottom: 10px;
+      color: black;
+      font-weight: bolder;
+    }
+
+    .login-link {
+      text-decoration: none;
+      color: white;
+      margin-left: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .login-link:hover {
+      transform: scale(1.5);
+      color: rgb(255, 187, 0)
+    }
+
+    /*  Signup Page  */
+    .signup-page-wrapper {
+      background: no-repeat url('https://soloskatemag.com/upload/Storage/_galleryThumbnailH/Bjoern-Klotz-Fs-Carve.jpg');
+      background-size: 100%;
+      height: 100%;
+  }
+
+    label.signupLabel {
+      color: white;
+      margin-bottom: 2px;
+      font-weight: bold;
+      padding: 2px;
+      letter-spacing: 2px;
+
+    }
+
+    .signup-form-wrapper {
+      background: rgba(53, 53, 53, 0.5);
+      border-radius: 12px;
+    }
+
+    .signup-form-section-wrapper {
+      margin: 20px;
+      padding: 0;
+    }
+
+    input.signup-button {
+      margin: 15px 10px 15px 10px;
+      padding: 0;
+      color: black;
+      font-weight: bolder;
+      font-size: 1em;
+      border-radius: 22px;
+      width: 95%;
+      background-color: rgb(255, 187, 0);
+    }
+
+    /* Map Page */
+    .addNewSpotPopUp {
+      background: #e74b3c;
+      color: white;
+      padding: 10px;
+      border: 4px solid black;
+      border-radius: 10px;
+      margin: 80vh 35vw;
+      text-align: none;
+      letter-spacing: 2px;
+      font-weight: bold;
+      box-shadow: 0 4px 2px -3px rgb(100, 100, 100);
+      transition: all 0.2s ease;
+    }
+
+    .addNewSpotPopUp:hover {
+      background-color: #f13e2e;
+      transform: scale(1.1);
+      }
+
+    /* Add Spot Page */
+    .addSpotWholePage {
+      background: no-repeat url('https://soloskatemag.com/upload/Storage/DanielLederman_OllieNorth_LHP_ByTheoAcworth.jpg');
+      background-size: 100%;
+      height: 100vh;
+    }
+
+    .addSpotContainer {
+      height: auto;
+      width: 30%;
+      margin: 6% 11%;
+      background: rgba(128, 128, 128, 0.637);
+      border-radius: 12px;
+      padding: 2%
+    }
+
+    .addSpotInput {
+      margin: 20px 0px;
+      background: inherit;
+      border: 4px groove rgb(255, 187, 0);
+      padding: 8px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .addSpotLabels {
+      margin: 50px 0px;
+      padding-bottom: 5px;
+      border-bottom: none;
+      width: 100vw;
+      color: white;
+      font-size: 12px;
+  }
+
+    .indoor {
+      color: rgb(255, 209, 83);
+    }
+
+    .outdoor {
+      color: rgb(255, 209, 83);
+    }
+
+    div.indoorLabel {
+      margin: 0 0 10px 0;
+    }
+
+    input#indoor.radioInput {
+      margin: 0;
+    }
+
+    input.addSpotButton {
+      margin: 10px 10px 10px 10px;
+      padding: 7px 4px;
+      color: black;
+      font-weight: bolder;
+      font-size: 1em;
+      border-radius: 22px;
+      width: 95%;
+      background-color: white;
+      }
+
+      .goBackButton {
+        display:none;
+      }
+
+      input.addSpotInput {
+        color: black;
+      }
+
+      textarea.addSpotInput {
+        color: black;
+      }
+
+      .floatingText1 {
+        position: absolute;
+        visibility: visible; 
+        left: 71%; 
+        top: 15%; 
+        height: 10%; 
+        width: 20%; 
+        z-index: 200; 
+        color: rgb(255, 187, 0);
+        font-family: Roboto;
+        font-weight: bold;
+        font-size: 5em;
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        text-align: left;
+      }
+
+      /* Spot Details Page */
+      .SpotDetailsPage {
+        background: no-repeat url('https://66.media.tumblr.com/64a1170f3167190780db6b23fb41a7e8/tumblr_oj2evksbvJ1reknppo1_1280.jpg');
+        background-size: 100%;
+        height: 100vh;
+      }
+
+      .spotDetailsContainer {
+        height: auto;
+        width: 30%;
+        margin: 5.5% 57%;
+        background: rgba(128, 128, 128, 0.637);
+        border-radius: 12px;
+        padding: 2%
+      }
+
+      .spotDetailLabel {
+        color: rgb(255, 187, 0);
+      }
+
+      .descriptionTitle {
+        color: rgb(255, 187, 0);
+      }
+
+      .detailsNameHeader {
+        color: rgb(255, 187, 0);
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+      }
+
+      .spotDetailValues {
+        margin: 20px 0 0 10px;
+        padding: 0;
+      }
+
+      .spotDescriptionValue {
+        margin: 10px 0 0 0;
+        padding: 0;
+        color: white;
+        text-align: justify;
+      }
+
+      .floatingTextDetails {
+        position: absolute;
+        visibility: visible; 
+        left: 25%; 
+        top: 15%; 
+        height: 10%; 
+        width: 20%; 
+        z-index: 200; 
+        color: rgb(255, 187, 0);
+        font-family: Roboto;
+        font-weight: bold;
+        font-size: 5em;
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        text-align: left;
+        opacity: 50%;
+      }
+
+      /* Map View Page */
+
+      .HomeTabs {
+        visibility: hidden;
+        height: 0;
+      }
+
+      .topRightNav {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        font-family: roboto;
+        align-content: center;
+        text-align: center;
+        margin: auto;
+      }
+
+      .hamburgerList {
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        color: rgb(255, 187, 0);
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 0 25px 0 0;
+        text-align: center;
+        padding: 10px 5px 10px 5px;
+      }
+
+      button.hamburgerList,
+      button.hamburgerList:after,
+      button.hamburgerList:before {
+        transition: all .2s;
+      }
+
+      button.hamburgerList:hover {
+        color: rgb(204, 150, 0);
+        transform: scale(1.25);
+      }
+
+
+      /* stroke */
+      button.hamburgerList {
+        position: relative;
+        
+      }
+
+      button.hamburgerList:before {
+        color: red;
+      }
+
+      button.hamburgerList:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '';
+        background:whitesmoke;
+        height: 1px;
+      }
+      button.hamburgerList:hover:after {
+        width: 100%;
+      }
+
+      h1.spotCheckHeader {
+        font-family: roboto;
+        font-size: 2em;
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+        text-align: center;
+        margin: auto;
+        width: 20vw;
+      }
+
+      .topRightNavAlign {
+        display: flex;
+        justify-content: right;
+        width: 80vw;
+        text-align: right;
+      }
+
+      #menu {
+        display: flex;
+      }
+
+      nav.navbar {
+        visibility: hidden;
+      }
+
+      section.topNav {
+        height: 6vh;
+      }
+
+      .logoOverlay {
+        position: absolute;
+        width: 15%;
+        height: auto;
+        top: 10%;
+        left: 3%
+      }
+
+      /* Favorites List Page */
+
+      .listContainer {
+        background: no-repeat url('https://soloskatemag.com/upload/Storage/Chris_Powerslide_Barca_Erik-Gross.jpg');
+        background-size: 100%;
+        background-attachment: fixed;
+        height: 100vh;
+      }
+
+      .favoriteListItemWrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 2% 35% 2% 35%;
+        border: 3px outset gray;
+        border-radius: 10px;
+        background: rgba(56, 51, 51, 0.87);
+        transition: all 0.2s ease;
+      }
+      
+      h1.favoriteListItem {
+        color: whitesmoke;
+        margin: 7% 5%;
+        width: 20vw;
+        text-align: center;
+        font-family: roboto;
+      
+      }
+      
+      .favoritesIcon {
+        height: 2.5em;
+        margin: 4% 5%;
+        text-align: left;
+      }
+
+      img.favoritesIconButton {
+        background: transparent;
+      }
+
+      .favoriteListWrapper {
+        height: 88%;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      .favoriteListWrapper {
+        margin-top: 0;
+      }
+
+      .favoriteListItemWrapper:hover {
+        background-color: rgb(228, 171, 15);
+        transform: scale(1.06);
+        }
+
+      /* Nav bar */
+      .topNavFixed {
+        position: relative;
+        width: 100%;
+      }
+
+      /* Map Page*/
+      div.overlays {
+        cursor: crosshair;
+      }
+
+      div.addNewSpotPopUp {
+
+      }
+
+      /* Profile Page */
+      section.bannerProfile {
+        height: 33vh;
+        background: url('https://www.monsterchildren.com/wp-content/uploads/2016/08/monster-children-rafael-24-1624x1080.jpg');
+        margin-bottom: 0;
+        margin-top: 60px;
+      }
+
+      div.picContainerProfile {
+        position: absolute;
+        height: 10vh;
+        
+      }
+
+      .bio {
+        height: 80vh;
+        background: rgb(17, 24, 24);
+        border-top: 3px solid;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+      }
+      
+      div.bioFloatDown {
+        height: 50vh;
+      }
+      
+      .bioProfile {
+        height: 50vh;
+        background: rgb(17, 24, 24);
+        border-top: 3px solid;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+      }
+      
+      .media {
+        height: 40vh;
+        background: rgb(33, 46, 46);
+        border-top: 3px solid;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+      }
+      
+      .picContainerProfile {
+        float: left;
+        width: 100%;
+        margin-top: 8%;
+      }
+      
+      .picContainer {
+        float: left;
+        width: 100%;
+        margin-top:50%;
+      }
+      
+      .profilePic {
+        display: inline-block;
+        width: auto;
+        height: 33vh;
+        border-radius: 50%;
+        border: 8px double;
+        object-fit: cover;
+        margin-bottom: 0;
+      }
+      
+      .profilePin {
+        height: 1em;
+        width: auto;
+        margin-right: 10px;
+      }
+      
+      .bioFiller {
+        height:30%;
+      }
+      
+      .bioFillerProfile{
+        height:30%;
+      }
+      
+      .currentLocation {
+        margin: 30px;
+        text-align: center;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      
+      .spotsAdded {
+        font-size: .9em;
+        font-weight: lighter;
+        margin-bottom: 40px;
+      }
+
+      .stickyNav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+
+      h1, h3 {
+        font-family: Roboto;
+        color: white;
+      }
+
+      h1.username {
+        font-size: 2.5em;
+      }
+
+      section.bioProfile {
+        height: 66vh;
+      }
+
+      /* Edit Profile Page */
+
+      .editProfileLabels {
+        margin: 50px 0px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgb(255, 187, 0);
+        width: 100vw;
+        color: white;
+        text-align: left;
+      }
+      
+      .editProfileForm {
+      height: auto;
+      width: 30%;
+      margin: auto;
+      padding-top: 14%
+      }
+      
+      .editProfile-button {
+        margin: 30px 0px 15px 10px;
+        padding: 15px 30px;
+        color: black;
+        font-weight: bolder;
+        font-size: 1em;
+        border-radius: 22px;
+        width: 95%;
+        background-color: rgb(255, 187, 0);
+      }
+      
+      .editProfileButton {
+        color: white;
+        height: 35px;
+        width: 100px;
+        border: 2px solid #FFF;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        background: black;
+        margin: 0 20px;
+        text-align: center;
+      
+      }
+      .editProfileButton:hover {
+        transform: scale(1.2);
+      }
+      
+      .picContainerEdit {
+      margin-top: 5%;
+      }
+
+      .editProfileInput {
+        margin: 20px 0px;
+        background: inherit;
+        border: 4px groove rgb(255, 187, 0);
+        padding: 8px;
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+
+      input.editProfileInput {
+        color: white;
+      }
+
+      .media h1 {
+        margin-top: 50px;
+        font-size: 2em;
+      }
+      /* .editProfilePage {
+        background: no-repeat url('https://66.media.tumblr.com/b6d4774ab29c16fd5d8a7f5324cc7e0e/tumblr_og1vqum6eG1reknppo1_1280.jpg');
+        background-size: 100%;
+        height: 100vh;
+      } */
+  }
 }
