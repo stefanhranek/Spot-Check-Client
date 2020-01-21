@@ -1120,7 +1120,7 @@ margin-top: 10%;
 
     .loginPageContainer {
       background: no-repeat url('https://soloskatemag.com/upload/Storage/_galleryThumbnailH/Bjoern-Klotz-Fs-Carve.jpg');
-      background-size: 100%;
+      background-size: cover;
       height: 100%;
     }
 
@@ -1228,7 +1228,7 @@ margin-top: 10%;
     /*  Signup Page  */
     .signup-page-wrapper {
       background: no-repeat url('https://soloskatemag.com/upload/Storage/_galleryThumbnailH/Bjoern-Klotz-Fs-Carve.jpg');
-      background-size: 100%;
+      background-size: cover;
       height: 100%;
   }
 
@@ -1285,7 +1285,7 @@ margin-top: 10%;
     /* Add Spot Page */
     .addSpotWholePage {
       background: no-repeat url('https://soloskatemag.com/upload/Storage/DanielLederman_OllieNorth_LHP_ByTheoAcworth.jpg');
-      background-size: 100%;
+      background-size: cover;
       height: 100vh;
     }
 
@@ -1378,7 +1378,7 @@ margin-top: 10%;
       /* Spot Details Page */
       .SpotDetailsPage {
         background: no-repeat url('https://66.media.tumblr.com/64a1170f3167190780db6b23fb41a7e8/tumblr_oj2evksbvJ1reknppo1_1280.jpg');
-        background-size: 100%;
+        background-size: cover;
         height: 100vh;
       }
 
@@ -1438,7 +1438,7 @@ margin-top: 10%;
         -1px 1px 0 #000,
         1px 1px 0 #000;
         text-align: left;
-        opacity: 50%;
+        opacity: 60%;
       }
 
       /* Map View Page */
@@ -1554,7 +1554,7 @@ margin-top: 10%;
 
       .listContainer {
         background: no-repeat url('https://soloskatemag.com/upload/Storage/Chris_Powerslide_Barca_Erik-Gross.jpg');
-        background-size: 100%;
+        background-size: cover;
         background-attachment: fixed;
         height: 100vh;
       }

@@ -12,7 +12,8 @@ class Profile extends Component {
         username: "",
         password: "",
         email: "",
-        city: ""
+        city: "",
+        mySpots: []
     }
 
 
@@ -23,14 +24,15 @@ class Profile extends Component {
     getUserData = () => {
         userService.getUser()
         .then( data => {
-            const { username, password, email, city } = data;
+            const { username, password, email, city, mySpots } = data;
             console.log('HER DA DATA', data);
             
             this.setState({
                 username,
                 password,
                 city,
-                email
+                email,
+                mySpots
             })
         })
         .catch( (err) => console.log(err));
@@ -56,7 +58,7 @@ class Profile extends Component {
                     <div className="bioFloatDownProfile">
                         <h1 className="username"> @ {this.state.username} </h1>
                         <h3 className="currentLocation"> <img className="profilePin" src="./../../pin.svg" alt="location pin"></img> {this.state.city} </h3>
-                        <h3 className="spotsAdded"> <b>{user.mySpots.length}</b> SPOTS ADDED </h3>
+                        <h3 className="spotsAdded"> <b>{this.state.mySpots.length}</b> SPOTS ADDED </h3>
                         <Link to="/edit-profile">
                             <button className="editProfileButton">Edit Profile</button>
                         </Link>
