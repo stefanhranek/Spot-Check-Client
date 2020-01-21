@@ -3,13 +3,51 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 
 class Signup extends Component {
-  state = { username: '', password: '', email: '' };
+  state = { 
+  username: '', 
+  password: '', 
+  email: '',
+  usernameError: undefined,
+  passwordError: undefined,
+  emailError: undefined,
+ };
 
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password, email } = this.state;
+
+    if (username === '') {
+      this.setState( {usernameError: 'Username was left blank'} )
+      // setInterval( () => {
+      //     this.setState(
+      //         {usernameError:undefined}
+      //     )
+      // } , 3000 )
+      return;
+  }
+
+    if (password === '') {
+      this.setState( {passwordError: 'Password was left blank'} )
+      // setInterval( () => {
+      //     this.setState(
+      //         {passwordError:undefined}
+      //     )
+      // } , 3000 )
+      return;
+    }
+
+    if (email === '') {
+      this.setState( {emailError: 'Email was left blank'} )
+      // setInterval( () => {
+      //     this.setState(
+      //         {emailError:undefined}
+      //     )
+      // } , 3000 )
+      return;
+    }
     //  console.log('Signup -> form submit', { username, password });
     this.props.signup({ username, password, email }); // props.signup is Provided by withAuth() and Context API
+
   };
 
   handleChange = event => {
@@ -36,7 +74,12 @@ class Signup extends Component {
                   type="text"
                   name="username"
                   value={username}
-                  onChange={this.handleChange}
+                  onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.usernameError
+                        ? this.state.usernameError
+                        : ""
+                    }
                 />
               </section>
 
@@ -47,7 +90,12 @@ class Signup extends Component {
                   type="password"
                   name="password"
                   value={password}
-                  onChange={this.handleChange}
+                  onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.passwordError
+                        ? this.state.passwordError
+                        : ""
+                    }
                 />
               </section>
 
@@ -58,7 +106,12 @@ class Signup extends Component {
                   type="email"
                   name="email"
                   value={email}
-                  onChange={this.handleChange}
+                  onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.emailError
+                        ? this.state.emailError
+                        : ""
+                    }
                 />
               </section>
 

@@ -14,7 +14,10 @@ class AddSpot extends Component {
         indoor: undefined,
         description: '',
         images: [],
-        location: []
+        location: [],
+        nameError: undefined,
+        typeError: undefined,
+        statusError: undefined,
      };
 
      componentDidMount() {
@@ -32,6 +35,19 @@ class AddSpot extends Component {
     handleFormSubmit = event => {
       event.preventDefault();
       const { name, type, status, indoor, description, images, location } = this.state;
+      if (name === '') {
+        this.setState( {nameError: 'Please insert a name for the spot'} )
+        return;
+      }
+      if (type === '') {
+        this.setState( {typeError: 'Choose a valid type: Park, Street, DIY'} )
+        return;
+      }
+      if (status === '') {
+        this.setState( {statusError: 'Choose a valid status: Active, WIP, RIP'} )
+        return;
+      }
+
       skateSpotService
         .addNewSkateSpot({ name, type, status, indoor, description, images, location })
         .then( () => {
@@ -64,9 +80,13 @@ class AddSpot extends Component {
                 type="text"
                 name="name"
                 value={name}
-                onChange={this.handleChange}
-                placeholder="Choose wisely ..."
-              />
+                onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.nameError
+                        ? this.state.nameError
+                        : "Choose wisely..."
+                    }
+                />
     
               <label className="addSpotLabels">TYPE OF SPOT</label>
               <input
@@ -74,9 +94,13 @@ class AddSpot extends Component {
                 type="text"
                 name="type"
                 value={type}
-                onChange={this.handleChange}
-                placeholder="Park / Street / DIY"
-              />
+                onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.typeError
+                        ? this.state.typeError
+                        : "Park / Street / DIY"
+                    }
+                />
     
               <label className="addSpotLabels">STATUS</label>
               <input
@@ -84,9 +108,13 @@ class AddSpot extends Component {
                 type="text"
                 name="status"
                 value={status}
-                onChange={this.handleChange}
-                placeholder="Active / WIP / RIP"
-              />
+                onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.statusError
+                        ? this.state.statusError
+                        : "Active / WIP / RIP"
+                    }
+                />
 
               <label className="addSpotLabels">INDOOR?</label>
                   <div className="indoorLabel">
@@ -118,7 +146,7 @@ class AddSpot extends Component {
                 name="description"
                 value={description}
                 onChange={this.handleChange}
-                placeholder="Legendary spot ..."
+                placeholder="Give your spot a description..."
               />
 
               <input className="addSpotButton" type="submit" value="ADD A SPOT" />

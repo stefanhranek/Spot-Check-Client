@@ -3,12 +3,37 @@ import { Link } from 'react-router-dom';
 import { withAuth } from '../lib/AuthProvider';
 
 class Login extends Component {
-  state = { username: '', password: '' };
+  state = { 
+    username: '', 
+    password: '',
+    usernameError: '',
+    passwordError: '' 
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
     this.props.login({ username, password });
+
+    if (username === '') {
+      this.setState( {usernameError: 'Username was left blank'} )
+      // setInterval( () => {
+      //     this.setState(
+      //         {usernameError:undefined}
+      //     )
+      // } , 3000 )
+      return;
+  }
+
+    if (password === '') {
+      this.setState( {passwordError: 'Password was left blank'} )
+      // setInterval( () => {
+      //     this.setState(
+      //         {passwordError:undefined}
+      //     )
+      // } , 3000 )
+      return;
+    }
   };
 
   handleChange = event => {
@@ -37,7 +62,12 @@ class Login extends Component {
                   type="text"
                   name="username"
                   value={username}
-                  onChange={this.handleChange}
+                  onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.usernameError
+                        ? this.state.usernameError
+                        : ""
+                    }
                 />
               </section>
 
@@ -47,8 +77,12 @@ class Login extends Component {
                   className="password-input-style"
                   type="password"
                   name="password"
-                  value={password}
-                  onChange={this.handleChange}
+                  onChange={event => this.handleChange(event)}
+                    placeholder={
+                      this.state.passwordError
+                        ? this.state.passwordError
+                        : ""
+                    }
                 />
               </section>
 

@@ -10,7 +10,7 @@ import BottomNav from "../components/BottomNav";
 class EditProfile extends Component {
   state = {
     username: "",
-    password: "",
+    // password: "",
     email: "",
     city: "",
     errorMessage: undefined
@@ -49,8 +49,8 @@ class EditProfile extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     // let updatedUser = this.state;
-    const { username, password, email, city, errorMessage } = this.state;
-    const updatedUser = { username, password, email, city, errorMessage };
+    const { username, /*password,*/ email, city, errorMessage } = this.state;
+    const updatedUser = { username, /*password,*/ email, city, errorMessage };
 
     userService.getUserByIdAndUpdate(updatedUser).then(() => {
       console.log("HELLLOOOOOOOO", updatedUser);
@@ -66,7 +66,7 @@ class EditProfile extends Component {
 
   render() {
     const { user, logout, isLoggedin } = this.props;
-    const { username, email, password, city } = this.state;
+    const { username, email, /*password,*/ city } = this.state;
     return (
       <div>
         <Menu />
