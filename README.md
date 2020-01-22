@@ -29,8 +29,9 @@ User profile:
 - Allow users to add comments to skate spots
 - Implement a Search Bar function so users can find a skate spot by searching its name
 - Filter feature on Map view
-- Toggle map color to 'Dark Mode'
-- 'Add Media' feature on Profile page - for images & video clips
+- 'Add Media' feature on Profile page - for images & video clips (Cloudinary)
+- Reverse-geocode for street addresses (Mapbox)
+- Set map viewport to current location (Mapbox)
 
 <br>
 
@@ -166,7 +167,7 @@ The url to your repository and to your deployed project
 
 [Server repository Link](https://github.com/stefanhranek/Spot-Check-Server)
 
-[Deployed App Link](http://heroku.com)
+[Deployed App Link](https://spotcheck-react.herokuapp.com/)
 
 ### Slides
 
