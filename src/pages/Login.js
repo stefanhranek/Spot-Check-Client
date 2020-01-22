@@ -15,6 +15,14 @@ class Login extends Component {
     const { username, password } = this.state;
     this.props.login({ username, password });
 
+    if ((username === '') && (password === '')) {
+      this.setState({
+        usernameError: 'Username was left blank',
+        passwordError: 'Password was left blank'
+      });
+      return;
+  }
+
     if (username === '') {
       this.setState( {usernameError: 'Username was left blank'} )
       // setInterval( () => {

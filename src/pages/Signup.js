@@ -16,6 +16,15 @@ class Signup extends Component {
     event.preventDefault();
     const { username, password, email } = this.state;
 
+    if ((username === '') && (password === '')) {
+      this.setState({
+        usernameError: 'Username was left blank',
+        passwordError: 'Password was left blank',
+        emailError: 'Email was left blank'
+      });
+      return;
+  }
+
     if (username === '') {
       this.setState( {usernameError: 'Username was left blank'} )
       // setInterval( () => {
