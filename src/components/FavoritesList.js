@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 import userService from './../lib/user-service';
 
 export default class FavoritesList extends Component {
-    state = { favoritesList: [] };
+    state = { 
+        favoritesList: [],
+        emptyMessage: '',
+    };
 
     getFavorites = () => {
         userService
         .getMyFavorites()
         .then( (data) => {
+            if (!data.favorites.length) {
+                // console.log('testttttttttttt');
+                // alert('Add spots from the map!')
+            }
             this.setState({favoritesList: data.favorites})
         })
         .catch( (err) => console.log(err))
@@ -26,7 +33,7 @@ export default class FavoritesList extends Component {
     }
 
     render() {
-        const { favoritesList } = this.state;
+        const { favoritesList, emptyMessage } = this.state;
         const allMyFavorites = favoritesList.map( element => {
             return <div key={element._id}>
                 <div 
@@ -47,10 +54,20 @@ export default class FavoritesList extends Component {
                 </div>
         }) 
         
-        return (
-            <div>
-                {allMyFavorites}
-            </div>
-        )
+        if (!favoritesList.length) {
+            return (
+                <div className="emptyMessage">
+                    <p>'No favorites yet, add spots from the map.'</p>
+                </div>
+            )
+        }
+
+        else {
+            return (
+                <div>
+                    {allMyFavorites}
+                </div>
+            )
+        }
     }
 }
