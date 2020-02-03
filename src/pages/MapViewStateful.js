@@ -98,7 +98,7 @@ class MapViewStateful extends React.Component {
         }}
         onClick={this.handleMapChange}
       >
-        {(selectedPark && selectedParkVisible) ? this.renderSpotDetailsPopup() : null}
+        {(selectedPark && selectedParkVisible) ? this.renderSpotDetailsPopup()  : null}
         { (newPin && pinVisible) ? this.renderAddSpotPopup() : null }
         {skatespots.map(park => (
           <Marker
@@ -126,6 +126,7 @@ class MapViewStateful extends React.Component {
             onClose={() => {
               this.setSelectedPark(null);
             }}
+            
           >
             
               <div>
@@ -148,6 +149,7 @@ class MapViewStateful extends React.Component {
           >
           </Popup>
         ) : null}
+        
       </ReactMapGL>
       <BottomNav />
     </div>
