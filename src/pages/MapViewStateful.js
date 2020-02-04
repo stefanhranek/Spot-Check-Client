@@ -13,7 +13,7 @@ class MapViewStateful extends React.Component {
     latitude: 41.3851,
     longitude: 2.1734,  /* set to Barcelona's location */
     width: "100vw",
-    height: "93.9vh",
+    height: "93.5vh",
     zoom: 10,
     spotsReady: false,
     selectedPark: null,
